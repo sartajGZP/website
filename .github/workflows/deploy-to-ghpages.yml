@@ -41,6 +41,8 @@ jobs:
         run: chmod +x node_modules/.bin/eleventy node_modules/pagefind/lib/runner/bin.cjs
       - run: ls -l node_modules/.bin | grep pagefind
       - run: npm run build-ghpages
+        env: 
+          GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
