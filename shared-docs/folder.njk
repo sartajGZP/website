@@ -1,0 +1,45 @@
+---
+pagination:
+  data: driveDocs.folders
+  size: 1
+  alias: currentFolder
+permalink: "shared-docs/{{ currentFolder.path }}/index.html"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ currentFolder.name }}"
+  eleventyNavigation:
+    key: "{{ currentFolder.path }}"
+    title: "{{ currentFolder.name }}"
+    parent: "{% if currentFolder.path.includes('/') %}{{ currentFolder.path.substring(0, currentFolder.path.lastIndexOf('/')) }}{% else %}shared-docs{% endif %}"
+---
+
+<h1>📂 {{ currentFolder.name }}</h1>
+
+<!-- 1. List Subfolders -->
+{% if currentFolder.subfolders.length > 0 %}
+  <h2>Subfolders</h2>
+  <ul>
+  {% for sub in currentFolder.subfolders %}
+    <li>
+      <a href="/shared-docs/{{ sub.path }}/">📁 {{ sub.name }}/</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}
+
+<!-- 2. List Documents -->
+{% if currentFolder.docs.length > 0 %}
+  <h2>Files</h2>
+  <ul>
+  {% for doc in currentFolder.docs %}
+    <li>
+      <a href="{{ doc.url }}">📄 {{ doc.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}
+
+{% if currentFolder.subfolders.length === 0 and currentFolder.docs.length === 0 %}
+  <p>This folder is empty.</p>
+{% endif %}
+

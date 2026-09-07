@@ -24,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/rrpIndia/ebgdemo/issues"
   },
-  "homepage": "https://github.com/rrpIndia/ebgdemo#readme"
+  "homepage": "https://github.com/rrpIndia/ebgdemo#readme",
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^5.1.3",
+    "dotenv": "^17.4.2",
+    "googleapis": "^178.0.0",
+    "turndown": "^7.2.4"
+  }
 }

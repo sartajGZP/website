@@ -1,0 +1,26 @@
+---
+pagination:
+  data: driveDocs.docs
+  size: 1
+  alias: doc
+permalink: "shared-docs/{{ doc.folderPath }}/{{ doc.slug }}/index.html"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ doc.title }}"
+  eleventyNavigation:
+    key: "{{ doc.folderPath }}/{{ doc.slug }}"
+    title: "{{ doc.title }}"
+    parent: "{{ doc.folderPath }}"
+---
+
+<article>
+  <header>
+    <p><a href="/shared-docs/{{ doc.folderPath }}/">← Back to directory</a></p>
+    <h1>{{ doc.title }}</h1>
+    <p>By {{ doc.author }} &bull; {{ doc.date }}</p>
+  </header>
+  <div>
+    {{ doc.content | safe }}
+  </div>
+</article>
+

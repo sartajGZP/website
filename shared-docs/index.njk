@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+permalink: "shared-docs/index.html"
+eleventyNavigation:
+  key: shared-docs
+  title: Shared Directory
+---
+
+<h1>Shared Directory</h1>
+
+<ul>
+{% for folder in driveDocs.folders %}
+  {% if not folder.path.includes('/') %}
+    <li><a href="/shared-docs/{{ folder.path }}/">📁 {{ folder.name }}/</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+
