@@ -1,0 +1,1046 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
+
+  
+
+  
+  
+    
+      
+      
+    
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="hi" href="https://sartaj.in/drafts/hi/preferential-voting/">
+    <link rel="alternate" hreflang="en" href="https://sartaj.in/drafts/en/preferential-voting/">
+    <link rel="alternate" hreflang="x-default" href="https://sartaj.in/drafts/en/preferential-voting/">
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HHVG075GJS');
+  </script>
+
+  <script>
+    (function() {
+      const size = localStorage.getItem('user-font-size');
+      const font = localStorage.getItem('user-font-family');
+      const lh = localStorage.getItem('user-line-height');
+      const root = document.documentElement;
+
+      if (size) root.style.setProperty('--font-size', size + 'rem');
+      if (font) root.style.setProperty('--font-family', font);
+      if (lh) root.style.setProperty('--line-height', lh);
+    })();
+  </script>
+
+<title>वरीय मतदान प्रणाली</title>
+
+
+  <link rel="canonical" href="https://sartaj.in/drafts/hi/preferential-voting/">
+
+
+
+  <meta name="description" content="भारत की मौजूदा मतदान प्रणाली (Flat Voting System) जिसमें मतदाता सिर्फ एक ही उम्मीदवार को वोट कर सकता है, में एक दोष है। यह दोष 1200 ईस्वी में ही सामने आ चुका था और 1200 ईस्वी में ही इसका समाधान भी खोज लिया गया था। समाधान है – वरीय मतदान प्रणाली ">
+
+  <link rel="stylesheet" href="/assets/bundle.css">
+  <script type="module" src="/assets/bundle.js"></script>
+
+</head>
+
+<body>
+
+  <header data-pagefind-ignore class="elv-header">
+  <div class="page-container elv-header-inner">
+
+    <!-- ROW 1: Party name -->
+    <div class="header-brand">
+      <a href="/hi/">
+        <span class="brand-link">
+          
+            राइट टू रिकॉल<br>पार्टी
+          
+        </span>
+      </a>
+    </div>
+
+    <!-- ROW 2: Search -->
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+
+<pagefind-filter-pane></pagefind-filter-pane>
+<pagefind-input></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results max-results="10"></pagefind-results>
+<pagefind-config faceted></pagefind-config>
+
+
+    <!-- ROW 3: Display Settings & Language Switcher -->
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
+
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
+      <option value="'Times New Roman', Times, serif" style="font-family: 'Times New Roman', Times, serif;">T.N. Roman</option>
+      <option value="cursive" style="font-family: cursive;">Cursive</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Boldness Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="weight-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="weight-label">
+      <button type="button" id="weight-down" title="Decrease boldness" aria-label="Decrease boldness">B−</button>
+      <button type="button" id="weight-reset" title="Reset boldness" aria-label="Reset boldness">Normal</button>
+      <button type="button" id="weight-up" title="Increase boldness" aria-label="Increase boldness">B+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Language Switcher -->
+  <div class="toolbar-group">
+    
+
+<div class="btn-group">
+  <a href="/drafts/en/preferential-voting/" id="lang-switch-link" class="lang-switch-btn" data-current-url="/drafts/hi/preferential-voting/" title="Switch Language">
+    <span class="lang-lbl active">हि</span>
+    <span class="lang-sep">।</span>
+    <span class="lang-lbl ">en</span>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const link = document.getElementById('lang-switch-link');
+    if (!link) return;
+
+    const currentUrl = link.dataset.currentUrl;
+    const currentLang = "hi"; 
+    const targetLang = currentLang === 'en' ? 'hi' : 'en';
+
+    const saveKey = 'return_path_' + currentLang;
+    const lookupKey = 'return_path_' + targetLang;
+
+    const justSwitched = sessionStorage.getItem('just_switched');
+    const savedReturnPath = sessionStorage.getItem(lookupKey);
+    const isCurrentlyHome = (currentUrl === '/' || currentUrl === '/hi/');
+
+    if (justSwitched === 'true') {
+      sessionStorage.removeItem('just_switched');
+    } else {
+      sessionStorage.removeItem('return_path_en');
+      sessionStorage.removeItem('return_path_hi');
+    }
+
+    if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+      link.setAttribute('href', sessionStorage.getItem(lookupKey));
+    }
+
+    link.addEventListener('click', () => {
+      sessionStorage.setItem(saveKey, currentUrl);
+      sessionStorage.setItem('just_switched', 'true');
+
+      if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+        sessionStorage.removeItem(lookupKey);
+      }
+    });
+  });
+</script>
+
+  </div>
+
+</div>
+
+
+    <!-- ROW 4: Navigation Tree -->
+    
+<nav class="docs-nav" aria-label="Navigation Tree">
+  <ul class="docs-nav__list">
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">blog</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              
+              
+                <li class="docs-nav__subitem">
+                  <a class="docs-nav__link docs-nav__link--overview" href="/blog/">
+                    blog Overview
+                  </a>
+                </li>
+              
+
+              
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/blog/22-July-2026/">
+                        blog-2026-08-22
+                      </a>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/blog/29-07-2026/">
+                        blog-2026-07-29
+                      </a>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/blog/addiction/">
+                        addiction
+                      </a>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">drafts</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              
+              
+                <li class="docs-nav__subitem">
+                  <a class="docs-nav__link docs-nav__link--overview" href="/drafts/">
+                    drafts Overview
+                  </a>
+                </li>
+              
+
+              
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/drafts/en/">
+                        english
+                      </a>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/drafts/hi/">
+                        हिंदी
+                      </a>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">Facebook</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              <li class="docs-nav__subitem">
+                <a class="docs-nav__link docs-nav__link--overview" href="/fb-export/">
+                  Facebook Home
+                </a>
+              </li>
+
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2026</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2025</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2024</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2023</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2022</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2021</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2020</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+
+
+  </div>
+</header>
+
+
+  <main data-pagefind-body>
+
+    <div class="page-container content">
+
+      <!-- Breadcrumb -->
+      
+
+      <!-- Page content -->
+      
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Export</title>
+</head>
+<body>
+    <p>#Vvp34 - वरीय मतदान प्रणाली के लिए कानूनी ड्राफ्ट :<br>
+.<br>
+Proposed draft for Preferential Voting System<br>
+.<br>
+यदि आप इस क़ानून का समर्थन करते है तो प्रधानमंत्री को एक खुला आदेश पत्र भेजे। आदेश पत्र में यह लिखे : <br>
+.<br>
+प्रधानमंत्री जी, वरीय मतदान प्रणाली क़ानून गेजेट में छापें - #PrefVotingSys <br>
+.<br>
+------------<br>
+.<br>
+(PDF का लिंक कमेन्ट बॉक्स में देखें)<br>
+.<br>
+भारत की मौजूदा मतदान प्रणाली (Flat Voting System) जिसमें मतदाता सिर्फ एक ही उम्मीदवार को वोट कर सकता है, में एक दोष है। यह दोष 1200 ईस्वी में ही सामने आ चुका था और 1200 ईस्वी में ही इसका समाधान भी खोज लिया गया था। समाधान है – वरीय मतदान प्रणाली (Preferential Voting System)<br>
+. <br>
+दोष यह है कि, मतदाता ऐसे उम्मीदवार को वोट नहीं कर पाता जिसे वह अपेक्षाकृत सबसे ईमानदार मानता है, बल्कि वह उस जिताऊ (Winnable) लेकिन कम बेईमान उम्मीदवार को वोट देने के लिए बाध्य होता है, जो कि अन्य जिताऊ लेकिन अधिक बेईमान उम्मीदवार को हरा सके। जिताऊ उम्मीदवार यानी विशाल संसाधनों वाले ब्रांडेड उम्मीदवार या बड़ी पार्टियों के उम्मीदवार, जिनके जीतने की सम्भावना सबसे ज्यादा होती है। <br>
+.  <br>
+इस दोष को एक उदाहरण से समझते है कि, किस तरह भारत की मौजूदा मतदान प्रणाली (Flat Voting System) अपेक्षाकृत ईमानदार उम्मीदारो के मैदान में होने के बावजूद मतदाताओ को बड़े लेकिन घटिया उम्मीदवारों को वोट करने के लिए बाध्य करती है।<br>
+. <br>
+किसी मतदाता X पर विचार कीजिए जो यह मानता है कि A, B, C तीनो बड़ी पार्टियों के उम्मीदवार घटिया है, जबकि उम्मीदवार D जो कि एक छोटा उम्मीदवार है, पर इन तीनो की अपेक्षा में बेहतर है। मान लीजिये कि मतदाता X उम्मीदवार A को बेहद घटिया मानता है, और किसी भी सूरत में A को फिर से सत्ता में नहीं देखना चाहता। <br>
+.<br>
+तो वह A को रोकने के लिए B को वोट कर देगा। वह D को वोट नहीं करेगा, जबकि वह जानता है कि D एक अच्छा उम्मीदवार है !! क्योंकि उसे यह भय है कि D को वोट देने से फिर से A सत्ता में आ जाएगा !! <br>
+.<br>
+यह एक नकारात्मक मतदान है। क्योंकि यहाँ X ने B को सिर्फ इसीलिए वोट दिया है, ताकि वह A को सत्ता से बाहर रख सके। और इस तरह के करोड़ो X नकारात्मक मतदान के लिए बाध्य होते है।  <br>
+.<br>
+इस समस्या के समाधान के लिए हमने वरीय मतदान प्रणाली (Preferential Voting) लागू करने का प्रस्ताव किया है। वरीय मतदान प्रणाली में मतदाता अपनी पसंद या वरीयता के आधार पर 1 से अधिक प्रत्याशियों को वोट दे सकता है। <br>
+.<br>
+जिस प्रत्याशी को वह सबसे ज्यादा पसंद करता है, उसे वह अपना पहला वोट देगा, और जिसे वह दुसरे नंबर पर सबसे ईमानदार मानता है, उसे वह अपना दूसरा वोट दे सकेगा। किन्तु मतदाता अधिकतम 3 प्रत्याशियों को ही वोट दे सकता है, 3 से अधिक नहीं। <br>
+.<br>
+क्या वरीय मतदान प्रणाली का इस्तेमाल किसी देश में किया जाता है ?<br>
+.<br>
+हाँ। आयरलेंड में राष्ट्रपति को चुनने के लिए वरीय मतदान प्रणाली का इस्तेमाल पिछले 70 वर्षो से किया जा रहा है। वहां के मतदान क्षेत्र का आकार 30 लाख है, जो कि भारत के संसदीय क्षेत्र के आकार से लगभग डेढ़ गुने से ज्यादा है। आयरलेंड के अलावा आस्ट्रेलिया, जर्मनी एवं कई अन्य देश भी वरीय मतदान (Preferential Voting System) का इस्तेमाल कई दशको से कर रहे है।   <br>
+.<br>
+---- क़ानून ड्राफ्ट का प्रारंभ----<br>
+.<br>
+टिप्पणियाँ एवं स्पष्टीकरण क़ानून का हिस्सा नहीं है। नागरिक एवं अधिकारी इनका इस्तेमाल दिशा निर्देशों के लिए कर सकते है।<br>
+.<br>
+इस क़ानून में 4 भाग है : <br>
+.<br>
+(A) बेलेट पेपर की सरंचना <br>
+.<br>
+(B) प्रथम चरण के चुनाव की प्रक्रिया <br>
+.<br>
+(C) द्वितीय चरण के चुनाव में मतों की गिनती का तरीका<br>
+.<br>
+(D) चुनाव प्रक्रिया को न्यायपूर्ण बनाने के लिए अन्य प्रावधान   <br>
+.<br>
+--------<br>
+.<br>
+(A) मतपत्र (Ballot Paper) की सरंचना :<br>
+. <br>
+(1) मतपत्र में अधिकतम 8 प्रत्याशी होंगे। आठ के अतिरिक्त नवां प्रत्याशी नोटा (Nota) होगा। इन 8 प्रत्याशियों में से 4 प्रत्याशी वे होंगे जिन्होंने पिछले चुनाव में सबसे अधिक वोट प्राप्त किये है, या जो पहले, दुसरे, तीसरे एवं चौथे स्थान पर रहे है। शेष 4 प्रत्याशियों का चयन करने के लिए प्रथम चरण का चुनाव आयोजित किया जायेगा।    <br>
+.<br>
+(2) यदि प्रत्याशियों की संख्या 8 से कम नहीं है तो मतपत्र में 7 खाने खड़े (Column) एवं 9 खाने आड़े (Row) होंगे। प्रत्याशियों की संख्या कम होने पर आडे खानों की संख्या भी घट जायेगी। उदाहरण के लिए यदि प्रत्याशियों की संख्या 6 है तो 2 आडे खाने (Row) कम कर दिए जायेंगे, किन्तु कॉलम यानि खड़े खानों की संख्या में कोई बदलाव नहीं होगा।  <br>
+.<br>
+(3) पहले आडे खाने (1st Row) में प्रत्याशी की क्रम संख्या, दुसरे खाने में प्रत्याशी का नाम, तीसरे खाने में पार्टी का नाम एवं चौथे खाने में प्रत्याशी के चुनाव चिन्ह का चित्र होगा। पांचवा, छठा एवं सातवाँ खाना खाली रहेगा, जिसमें मतदाता अपनी प्राथमिकता के आधार पर एक से अधिक प्रत्याशियों (अधिकतम 3 प्रत्याशियों को) को वोट कर सकेगा। मतपत्र में पार्टी का नाम लिखने के दिशा निर्देश के लिए भाग D की धारा 5 देखें।<br>
+.<br>
+(4) जिस प्रत्याशी को मतदाता सबसे ईमानदार मानता है, उसे वह पाचवें खाने में वोट करेगा, और जिसे वह दुसरे नंबर पर सबसे ईमानदार मानता है, उसे छठें खाने में, और इसी तरह मतदाता चाहे तो तीसरे सबसे ईमानदार प्रत्याशी को भी सातवें खाने में वोट कर सकता है। <br>
+.<br>
+(5) यदि मतदाता सिर्फ एक ही प्रत्याशी को वोट करना चाहता है, तो वह मौजूदा व्यवस्था की तरह सिर्फ एक प्रत्याशी को भी वोट कर सकता है, और उसे अन्य प्रत्याशियों को वोट करने की जरुरत नहीं है।    <br>
+.<br>
+(6) यदि प्रत्याशियों की संख्या 8 है तो मतपत्र कम से कम 12 इंच ऊँचा तथा 10 इंच चौड़ा होगा। जिन ख़ानो में मतदाता द्वारा छाप (मुहर) लगाई जाती है, उन ख़ानो को विभाजित करने वाली रेखा (Separating Border) की मोटाई कम से कम 0.55 इंच होगी तथा वोट देने के लिए इस्तेमाल की जाने वाली छाप की चौड़ाई / गोलाई 0.50 इंच से अधिक नहीं होगी। ताकि मतदाता जब किसी खाने में छाप लगाए तो छाप किसी भी स्थिति में दो ख़ानो में न छप सके। इससे वोट रद्द होने की सम्भावना शून्य हो जायेगी। <br>
+.<br>
+(B) प्रथम चरण के चुनाव की प्रक्रिया <br>
+.<br>
+(7) जिस दिनांक पर द्वितीय चरण के चुनाव का मतदान होना है, उस दिनांक के 30 दिवस पूर्व नामांकन भरना शुरू होंगे। यदि सिर्फ 8 या उससे कम प्रत्याशियों ने ही नामांकन भरा है, तो प्रथम चरण का चुनाव नहीं होगा और ये 8 प्रत्याशी सीधे द्वितीय चरण के चुनाव के लिए चुन लिए जायेंगे। किन्तु यदि 8 से अधिक प्रत्याशियों ने नामांकन भरा है तो प्रथम चरण का चुनाव होगा।  <br>
+.<br>
+(8) प्रथम चरण के चुनाव के मतपत्र में उन प्रत्याशियों के नाम नहीं होंगे जो पिछले चुनाव में पहले से चौथे स्थान पर रहे है। यदि किसी प्रत्याशी ने पार्टी के टिकेट पर चुनाव लड़ा है और 1 से 4 बीच स्थान प्राप्त किया है तो इसे पार्टी द्वारा अर्जित स्थान माना जाएगा, प्रत्याशी द्वारा अर्जित नहीं। उदारहण के लिए मान लीजिये कि मिस्टर X ने पिछला चुनाव किसी पार्टी के चिन्ह पर लड़ा था, और इस बार पार्टी ने अमुक क्षेत्र से Y को टिकेट दिया है, तो X को द्वितीय चरण में आने के लिए प्रथम चरण का चुनाव लड़ना होगा, जबकि Y का नाम सीधे द्वितीय चरण के चुनाव में जाएगा।   <br>
+.<br>
+(9) मान लीजिये कि 1 जुलाई को द्वितीय चरण के चुनाव होने है तो प्रथम चरण से द्वितीय चरण के चुनाव की दिवस योजना इस तरह रहेगी :<br>
+.<br>
+(9.1) नामांकन भरने की प्रारम्भिक तिथि : 1 जून (द्वितीय चरण के मतदान दिवस से 30 दिवस पूर्व।)<br>
+.<br>
+(9.2) नामांकन भरने की अंतिम तिथि : 8 जून (नामांकन भरने के लिए प्रत्याशियों को 8 कार्य दिवस मिलेंगे।)<br>
+.<br>
+(9.3) स्क्रूटिनी एवं चुनाव चिन्हों का आवंटन : 9 जून <br>
+.<br>
+(9.4) प्रथम चरण का मतदान : 16 जून ( प्रचार के लिए कम से कम 7 दिवस दिए जायेंगे)<br>
+.<br>
+(9.5) प्रथम चरण के मतदान की गणना : 19 जून<br>
+.<br>
+(9.6) द्वितीय चरण का मतदान : 1 जुलाई <br>
+.<br>
+(10) प्रथम चरण के चुनाव में मतदान उसी तरीके से होगा, जिस तरीके से मौजूदा व्यवस्था में होता है। मतलब मतदाता किसी एक प्रत्याशी को ही वोट दे सकेगा, और सबसे अधिक वोट प्राप्त करने वाले प्रथम 4 प्रत्याशियों के नाम द्वितीय चरण के चुनावी मतपत्र के लिए चुन लिए जायेंगे। <br>
+.<br>
+(C) द्वितीय चरण के चुनाव में मतों की गिनती का तरीका :<br>
+.<br>
+(11) मतगणना में 8 राउंड होंगे। यदि आठवें राउंड तक किसी भी प्रत्याशी को 50% से अधिक मत नहीं मिलते है तो आठवें राउंड में सबसे अधिक मत प्राप्त करने वाला प्रत्याशी जीता हुआ माना जायेगा।<br>
+.<br>
+(12) पहला राउंड : पहले राउंड में 8 प्रत्याशियों के लिए 8 टोकरियाँ होगी। इस राउंड में मतपत्र में सिर्फ पांचवे खाने (5th Column &amp; 1st Preference) यानि सबसे ईमानदार वाले खाने में छाप देखी जायेगी। जिस प्रत्याशी को पांचवें खाने में छाप मिली है, मतपत्र अमुक प्रत्याशी की टोकरी में डाल दिया जाएगा। रद्द हुए मतपत्रो के लिए एक अलग से टोकरी होगी।  <br>
+.<br>
+(13) दुसरा राउंड : अब वोटो को गिना जाएगा, और जिस प्रत्याशी को सबसे कम वोट मिले है, उस प्रत्याशी के सभी मतपत्रो को शेष 7 प्रत्याशियों में इस तरह बाँटा जाएगा – सबसे कम वोट पाने वाले प्रत्याशी के मतपत्रो में छठे खाने (6th Column &amp; 2nd Preference) यानि दुसरे सबसे ईमानदार वाले खाने में छाप देखी जायेगी, और यह मतपत्र अमुक प्रत्याशी की टोकरी में डाल दिया जाएगा। इस तरह एक प्रत्याशी बाहर हो जाएगा। <br>
+.<br>
+(14) तीसरा राउंड : अब वोटो को फिर से गिना जाएगा, और जिस प्रत्याशी की टोकरी में सबसे कम वोट है, उस प्रत्याशी के सभी मतपत्रो को शेष बचे 6 प्रत्याशियों में इस तरह बाँटा जाएगा – सबसे कम वोट पाने वाले प्रत्याशी के मतपत्रो में सांतवें खाने (6th Column &amp; 2nd Preference) यानि दुसरे सबसे ईमानदार वाले खाने में छाप देखी जायेगी, और यह मतपत्र अमुक प्रत्याशी की टोकरी में डाल दिया जाएगा। यहाँ एक प्रत्याशी फिर से बाहर हो जाएगा।<br>
+.<br>
+(15) यदि किसी मतपत्र के छठे खाने (2nd Preference) में उस प्रत्याशी को वोट किया गया है, जो पहले राउंड में ही बाहर हो चुका है, तो मतपत्र के सातवें खाने (3rd Preference) में छाप देखी जायेगी और मतपत्र को अमुक प्रत्याशी की टोकरी में डाल दिया जाएगा। <br>
+.<br>
+(16) इसी तरह मतगणना 8 राउंड तक चलती रहेगी, और प्रत्येक राउंड में एक प्रत्याशी बाहर हो जाएगा। 8 वें राउंड में सिर्फ 2 प्रत्याशी ही बचेंगे इस राउंड की गिनती के बाद जिसके पास सबसे अधिक वोट रहेंगे उसे विजयी माना जाएगा।   <br>
+.<br>
+[टिप्पणी 1 : वरीय मतदान प्रणाली के लाभ <br>
+.<br>
+यह प्रणाली आने से मतदाता उन छोटे किन्तु ईमानदार उम्मीदवारों को भी वोट कर पायेगा जिन्होंने अच्छा एजेंडा प्रस्तुत किया है, किन्तु पेड मीडिया का समर्थन नहीं मिलने के कारण वे जिताऊ उम्मीदवारों की श्रेणी में नहीं आ पाते। अत: यह व्यवस्था आने से पेड मीडिया के प्रायोजको द्वारा चुनाव के नतीजो को प्रभावित करने की उनकी क्षमता में कमी आयेगी।<br>
+.<br>
+यदि छोटी पार्टियों के अच्छे उम्मीदवारों को ज्यादा वोट मिलेंगे तो यह संख्या अन्य मतदाताओ को भी प्रभावित करेगी और अगले चुनावों में उन्हें और भी ज्यादा वोट मिलेंगे। अधिक वोट मिलने से उनकी लोकप्रियता बढ़ेगी और बड़ी पार्टियों पर अच्छे उम्मीदवारों को टिकेट देने या अपने घोषणापत्र में जनहित के बिन्दुओ को शामिल करने का दबाव बनेगा।]<br>
+. <br>
+(D) चुनाव प्रक्रिया को न्यायपूर्ण बनाने के लिए अन्य प्रावधान <br>
+.<br>
+(17) प्रत्याशी ने जिस दिन नामांकन दाखिल किया है उसके अगले दिन दोपहर 12 बजे से पूर्व रिटर्निंग ऑफिसर को यह घोषित करना होगा कि प्रत्याशी का नामांकन ख़ारिज किया गया है या स्वीकृत। यदि नामांकन स्वीकृत हो गया है तो उसी समय प्रत्याशी का नाम अंतिम प्रत्याशियों की सूची में आ जाएगा।<br>
+.<br>
+(18) अमान्यता प्राप्त रजिस्टर्ड पार्टी के प्रत्याशीयों को एवं निर्दलीय प्रत्याशियों को नामांकन पत्र में सिर्फ 1 प्रस्तावक का विवरण ही जोड़ना होगा 10 प्रस्तावको का नहीं।<br>
+.<br>
+[ टिप्पणी 2 : मौजूदा व्यवस्था में मान्यताप्राप्त पार्टियों को सिर्फ एक प्रस्तावक को ही अपने साथ लाना होता है जबकि छोटी पार्टी एवं निर्दलीय प्रत्याशियों को अपने साथ 10 प्रस्तावकों को कचहरी में लेकर जाना पड़ता है। <br>
+.<br>
+बहुधा छोटे उम्मीदवारों के प्रस्तावक एन टाइम पर कलेक्टर के सामने हाजिर होने से मना कर देते है, और उम्मीदवार का नामांकन ख़ारिज हो जाता है। हर चुनाव में कई छोटे प्रत्याशियों के नामांकन सिर्फ प्रस्तावको की डिटेल में त्रुटी होने या उनके हाजिर न हो पाने के कारण ख़ारिज होते है।]<br>
+.<br>
+(19) यदि प्रत्याशी ने शपथपत्र में कोई कॉलम खाली छोड़ दिया है तो रिटर्निंग ऑफिसर उसे यह अनुमति देगा कि प्रत्याशी रिटर्निंग ऑफिसर के सामने इसे भर सके।<br>
+.<br>
+[ टिप्पणी 3 : शपथपत्र का यह नियम है कि यदि कोई कॉलम खाली रखा गया है तो नामांकन ख़ारिज हो जाता है। किन्तु मौजूदा व्यवस्था में यह विवेकाधिकार रिटर्निंग ऑफिसर को दिया गया है कि वह शपथपत्र में खाली छूट गए कॉलम को भरने की अनुमति दे या नामांकन ख़ारिज करें। ज्यादातर मामलो में रिटर्निंग ऑफिसर बड़ी पार्टियों के उम्मीदवारों को यह अनुमति दे देता है, और छोटी पार्टियों एवं निर्दलीय उम्मीदवारों के नामांकन रद्द कर देता है। ]   <br>
+.<br>
+(20) यदि प्रत्याशी ने एक बार नामांकन जमा कर दिया है तो वह अपना नामांकन वापस (Withdrawal) नहीं ले सकेगा।  <br>
+.<br>
+[ टिप्पणी 4 : मौजूदा व्यवस्था यह है कि, फॉर्म भरने की अंतिम तिथि निकलने के बाद अगले 2 दिनों तक प्रत्याशी चाहे तो अपना नामांकन वापिस ले सकता है। तो जिन छोटी पार्टियों एवं निर्दलीय उम्मीदवारों के चुनाव लड़ने से बड़ी पार्टियों के उम्मीदवार को वोटो का नुकसान हो रहा होता है, वे धन-बल का इस्तेमाल करके उन्हें नामांकन वापसी के लिए राजी कर लेते है। <br>
+.<br>
+छोटे उम्मीदवार के वोट लाने की सम्भावना जितनी ज्यादा है, उसे बिठा देने का दबाव भी उसी अनुपात में बढ़ता जाता है। हालाँकि यदि उम्मीदवार चुनाव के परिणाम को बिलकुल भी प्रभावित नहीं करता तो उसे नाम वापसी के दबाव का सामना नहीं करना पड़ेगा। <br>
+.<br>
+उल्लेखनीय है कि, नामांकन दाखिल करने की अंतिम तिथि निकल जाने के बाद भी नाम वापसी चालू रहती है। मतलब, यदि एक बार किसी उम्मीदवार ने अपना नामांकन वापिस कर लिया तो वह फिर से नामांकन नहीं भर पायेगा, और न ही क्षतिपूर्ति के लिए कोई और उम्मीदवार नामांकन दाखिल कर सकेगा। <br>
+.<br>
+उदारहण के लिए मान लीजिये कि, S एक छोटी पार्टी है जिसने Y को टिकेट दिया है। मान लीजिये कि नामांकन भरने की अंतिम तिथि 10 जून और नाम वापसी की अंतिम तारीख 13 जून है। मान लीजिये कि एक बड़ी पार्टी के उम्मीदवार के दबाव में 11 जून को Y अपना फॉर्म उठा लाता है तो अब अमुक चुनाव क्षेत्र में S का कोई उम्मीदवार चुनाव नहीं लड़ पायेगा। क्योंकि नामांकन दाखिल करने की तारीख निकल चुकी है !! ]</p>
+    <p>(21) मान्यता प्राप्त पार्टियों की तरह ही अमान्यता प्राप्त रजिस्टर्ड पार्टियों को भी स्थायी चुनाव चिन्ह जारी किये जायेंगे। <br>
+.<br>
+[ टिप्पणी 5 : मान्यता प्राप्त पार्टियों के पास स्थायी चुनाव चिन्ह होने के कारण में अपने चिन्ह का प्रचार निरंतर कर पाते है, जबकि अमान्यता प्राप्त पार्टियों पार्टियों को स्थायी चुनाव चिन्ह नहीं दिया जाता। इन्हें चुनाव चिन्ह उम्मीद मतदान के 10 दिन पहले दिया जाता है। चुनाव चिन्ह न होने के कारण छोटी पार्टियों के उम्मीदवार अपने चिन्ह का प्रचार सिर्फ 10 दिन पहले ही शुरू कर पाते है, और उन्हें काफी नुकसान उठाना पड़ता है।]     <br>
+.<br>
+(22) पार्टी का नाम मतपत्र पर लिखने के लिए दिशा निर्देश।  <br>
+.<br>
+[ टिपण्णी 6 : मौजूदा क़ानून के अनुसार मतपत्र / ईवीएम पर पार्टियों के नाम नहीं लिखे जाते है। मतपत्र पर सिर्फ उम्मीदवार का नाम एवं पार्टी का चुनाव चिन्ह होता है। इससे बड़ी पार्टियों को फायदा और छोटी पार्टियों को नुकसान होता है।<br>
+.<br>
+दरअसल, बड़ी पार्टियों (मान्यता प्राप्त पार्टियाँ) के चुनाव चिन्ह स्थायी होने के कारण सभी मतदाता इससे परिचित हो जाते है। किन्तु चूंकि छोटी पार्टियों (पंजीकृत किन्तु अमान्यता प्राप्त) के पास स्थायी चुनाव चिन्ह नहीं होता और उनका चिन्ह प्रत्येक चुनाव के बाद बदल जाता है, अत: बहुत कम मतदाताओं तक यह पहुँच पाता है। <br>
+.<br>
+हम बेलेट पेपर में पार्टियों का नाम जोड़ने का प्रस्ताव कर रहे है। निचे वह प्रक्रिया दी है जिसके तहत पार्टियों के लम्बे नाम नामक समस्या का समाधान करके बेलेट में पेपर में पार्टियों के नाम जोड़े जा सकेंगे।]<br>
+.<br>
+(22.1) मतपत्र में पार्टी का नाम लिखने वाले कॉलम में 10 अक्षर लिखने का स्थान रहेगा। यदि पार्टी के नाम में 10 अक्षर (letters) से अधिक नहीं है तो पार्टी का पूरा नाम लिखा जाएगा। <br>
+.<br>
+(22.2) यदि पार्टी के नाम में 10 से अधिक अक्षर है तो पार्टी वाले कॉलम में पार्टी का संक्षेपाक्षर जैसे भाजपा, बसपा (Abbreviation) तथा पार्टी का कोड लिखा जाएगा। <br>
+.<br>
+(22.3) चुनाव आयोग सभी पार्टियों को स्थायी संक्षेपाक्षर (Abbreviation) जारी करेगा। <br>
+.<br>
+(23.4) पार्टियों को कोड जारी करने का तरीका : चुनाव आयोग सभी पार्टियों को निम्नलिखित वर्गों में विभाजित करके इनकी रजिस्टर्ड होने की तिथि के आधार पर प्रत्येक वर्ग की अलग अलग वरीयता सूची बनाएगा, और उन्हें क्रमिक रूप से एक स्थायी नंबर जारी करेगा<br>
+.<br>
+(a) राष्ट्रिय स्तर पर मान्यता प्राप्त पार्टियाँ (कोड़ N-000)<br>
+(b) राज्य स्तर पर मान्यता प्राप्त पार्टियाँ (कोड S-000)<br>
+(c) पंजीकृत एवं अमान्यता प्राप्त पार्टियाँ (कोड U-0000)<br>
+.<br>
+उदाहरण : मान लीजिये कि मान्यता प्राप्त पार्टियों की सूची में 40 पार्टियाँ है, जिसमें भाजपा एवं कोंग्रेस का भी नाम है। अब मान लीजिये कि सूची में सबसे पुरानी पार्टी कोंग्रेस है तो चुनाव आयोग इसे N-001 कोड दे देगा। <br>
+.<br>
+इसी तरह मान लीजिये कि बीजेपी 16 वीं सबसे पुरानी पार्टी है तो चुनाव आयोग बीजेपी को N-016 कोड जारी कर देगा। और इसी तरह से राज्य स्तरीय मान्यता प्राप्त पार्टियों को S एवं अमान्यता प्राप्त पार्टियों को U से प्रारंभ होने वाले कोड जारी किये जायेंगे। एक बार जारी होने के बाद ये कोड बदले नहीं जायेंगे।<br>
+.<br>
+(23) जनता की आवाज<br>
+. <br>
+(23.1) यदि कोई मतदाता इस कानून में कोई परिवर्तन चाहता है तो वह धारा 23.1 के तहत कलेक्टर कार्यालय में एक एफिडेविट जमा करवा सकेगा। जिला कलेक्टर 20 रूपए प्रति पृष्ठ की दर से शुल्क लेकर एफिडेविट को मतदाता के वोटर आई.डी नंबर के साथ मुख्यमंत्री की वेबसाइट पर स्कैन करके रखेगा।<br>
+.  <br>
+(23.2) यदि कोई मतदाता धारा 23.1 के तहत प्रस्तुत किसी एफिडेविट पर अपना समर्थन दर्ज कराना चाहे तो वह पटवारी कार्यालय में 3 रूपए का शुल्क देकर अपनी हां / ना दर्ज करवा सकता है। पटवारी इसे दर्ज करेगा और हाँ / ना को मतदाता के वोटर आई.डी. नम्बर के साथ मुख्यमंत्री की वेबसाईट पर सार्वजनिक करेगा।<br>
+.<br>
+------ड्राफ्ट का समापन-----</p>
+</body>
+</html>
+
+
+    </div>
+
+  </main>
+
+  <footer>
+  <a class="contact" href="/pages/footer/contact.html">Contact Us</a>
+  <a class="about" href="/pages/footer/about.html">About Us</a>
+  <a class="social" href="/pages/footer/socials.html">Our Socials</a>
+  <a class="join" href="/pages/footer/join.html">Join Us</a>
+</footer>
+
+
+</body>
+</html>
