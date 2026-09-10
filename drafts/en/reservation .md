@@ -1,6 +1,7 @@
 ---
-title: "reservation "
+title: "reservation"
 description: ""
+lang: en
 ---
 
 # Coming Soon

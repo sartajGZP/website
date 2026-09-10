@@ -1,6 +1,7 @@
 ---
 title: "gun-law"
 description: ""
+lang: en
 ---
 
 # Coming Soon

@@ -1,3 +1,9 @@
+---
+title: "Empty Land Tax"
+description: ""
+lang: en
+---
+
 # **2. Empty Land Tax: Proposal To Abolish GST & Levy Tax On Empty Land** 
 
 ## **Instructions for citizens and officers** 

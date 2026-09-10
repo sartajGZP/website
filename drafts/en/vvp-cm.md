@@ -1,6 +1,7 @@
 ---
 title: "vvp-cm"
 description: ""
+lang: en
 ---
 
 # Coming Soon

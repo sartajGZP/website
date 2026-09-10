@@ -1,6 +1,7 @@
 ---
-title: coorg-law-referendum
+title: "coorg-law-referendum"
 description: ""
+lang: en
 ---
 
 # Coming Soon

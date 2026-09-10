@@ -1,3 +1,9 @@
+---
+title: "dhan-vapasi"
+description: ""
+lang: en
+---
+
 # **1. Draft Of The Proposed Dhan Vapsi Passbook Law** 
 
 This draft has two parts: 

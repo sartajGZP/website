@@ -1,6 +1,7 @@
 ---
-title: "mbp"
+title: "minimum-buying-price"
 description: ""
+lang: en
 ---
 
 # Coming Soon

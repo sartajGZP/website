@@ -1,0 +1,89 @@
+{% if not lang %}
+  {{ None['FATAL ERROR: "lang" is missing in front matter for file: ' + page.inputPath] }}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
+
+  {% set siteUrl = "https://sartaj.in" %}
+
+  {# Check if the page is inside /drafts/ #}
+  {% if page.url and "/drafts/" in page.url %}
+    {% if lang == "hi" %}
+      {% set hiUrl = siteUrl + page.url %}
+      {% set enUrl = siteUrl + (page.url | replace("/drafts/hi/", "/drafts/en/")) %}
+    {% elif lang == "en" %}
+      {% set hiUrl = siteUrl + (page.url | replace("/drafts/en/", "/drafts/hi/")) %}
+      {% set enUrl = siteUrl + page.url %}
+    {% else %}
+      {{ None['FATAL ERROR: Invalid lang value "' + lang + '" in file: ' + page.inputPath] }}
+    {% endif %}
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="hi" href="{{ hiUrl }}">
+    <link rel="alternate" hreflang="en" href="{{ enUrl }}">
+    <link rel="alternate" hreflang="x-default" href="{{ enUrl }}">
+  {% endif %}
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HHVG075GJS');
+  </script>
+
+  <script>
+    (function() {
+      const size = localStorage.getItem('user-font-size');
+      const font = localStorage.getItem('user-font-family');
+      const lh = localStorage.getItem('user-line-height');
+      const root = document.documentElement;
+
+      if (size) root.style.setProperty('--font-size', size + 'rem');
+      if (font) root.style.setProperty('--font-family', font);
+      if (lh) root.style.setProperty('--line-height', lh);
+    })();
+  </script>
+
+<title>{{ title or "Right to Recall Party" }}</title>
+
+{% if page.url %}
+  <link rel="canonical" href="{{ siteUrl }}{{ page.url }}">
+{% endif %}
+
+{% if description %}
+  <meta name="description" content="{{ description }}">
+{% endif %}
+  <link rel="stylesheet" href="/assets/bundle.css">
+  <script type="module" src="/assets/bundle.js"></script>
+
+</head>
+
+<body>
+
+  {% include "header/header.njk" %}
+
+  <main data-pagefind-body>
+
+    <div class="page-container content">
+
+      <!-- Breadcrumb -->
+      {% if eleventyNavigation %}
+        {% include "components/breadcrumb.njk" %}
+      {% endif %}
+
+      <!-- Page content -->
+      {{ content | safe }}
+
+    </div>
+
+  </main>
+
+  {% include "footer/footer.html" %}
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 ---
-title: dist-gun-law
+title: "dist-gun-law"
 description: ""
+lang: en
 ---
 
 # Coming Soon

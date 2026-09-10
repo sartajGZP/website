@@ -1,5 +1,5 @@
 ---
-layouts: base.njk
+layout: layouts/base.njk
 lang: en
 title: Home Page
 ---

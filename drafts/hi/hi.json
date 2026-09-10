@@ -1,5 +1,5 @@
 {
   "lang": "hi",
   "tags": ["draft"],
-  "layout": "layouts/base.njk"
+  "layout": "layouts/drafts.njk"
 }

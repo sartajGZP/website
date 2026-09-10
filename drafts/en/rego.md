@@ -1,6 +1,7 @@
 ---
 title: "rego"
 description: ""
+lang: en
 ---
 
 # Coming Soon

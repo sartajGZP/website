@@ -1,6 +1,7 @@
 ---
-title: pref-voting
+title: "preferential-voting"
 description: ""
+lang: en
 ---
 
 # Coming Soon

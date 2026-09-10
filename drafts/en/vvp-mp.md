@@ -1,6 +1,7 @@
 ---
 title: "vvp-mp"
 description: ""
+lang: en
 ---
 
 # Coming Soon

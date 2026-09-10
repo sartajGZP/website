@@ -1,6 +1,7 @@
 ---
 title: "hist-revised"
 description: ""
+lang: en
 ---
 
 # Coming Soon

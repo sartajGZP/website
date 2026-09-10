@@ -1,6 +1,7 @@
 ---
-title: "woic"
+title: "wholly-owned-by-indian-company"
 description: ""
+lang: en
 ---
 
 WOIC; Law Draft for Wholly Owned by Indian citizens Company
