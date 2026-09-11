@@ -1,5 +1,5 @@
 ---
-title: "Social Media Policy"
+title: "Social Media Policy | Right to recall party"
 description: ""
 lang: en
 ---

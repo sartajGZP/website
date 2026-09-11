@@ -1,5 +1,5 @@
 ---
-title: "coorg-law-referendum"
+title: "coorg-law-referendum | Right to recall party"
 description: ""
 lang: en
 ---

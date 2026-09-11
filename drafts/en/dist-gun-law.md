@@ -1,5 +1,5 @@
 ---
-title: "dist-gun-law"
+title: "dist-gun-law | Right to recall party"
 description: ""
 lang: en
 ---

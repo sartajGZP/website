@@ -1,5 +1,5 @@
 ---
-title: "vvp-dd-chairman"
+title: "vvp-dd-chairman | Right to recall party"
 description: ""
 lang: en
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Gau Niti"
+title: "Gau Niti | Right to recall party"
 description: "This law will reduce butchering of indigenous cow and strengthen their protection. pasing this law in VS is not needed. Chief Minster can directly print this in gazette."
 lang: en
 ---

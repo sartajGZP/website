@@ -1,5 +1,5 @@
 ---
-title: "Jury Court "
+title: "Jury Court  | Right to recall party"
 description: ""
 lang: en
 ---

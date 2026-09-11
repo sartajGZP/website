@@ -1,5 +1,5 @@
 ---
-title: "rego"
+title: "rego | Right to recall party"
 description: ""
 lang: en
 ---

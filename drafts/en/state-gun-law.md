@@ -1,5 +1,5 @@
 ---
-title: "state-gun-law"
+title: "state-gun-law | Right to recall party"
 description: ""
 lang: en
 ---

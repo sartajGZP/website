@@ -1,5 +1,5 @@
 ---
-title: "vvp-central-minister"
+title: "vvp-central-minister | Right to recall party"
 description: ""
 lang: en
 ---

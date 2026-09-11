@@ -1,5 +1,5 @@
 ---
-title: "vvp-health-min"
+title: "vvp-health-min | Right to recall party"
 description: ""
 lang: en
 ---

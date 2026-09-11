@@ -1,5 +1,5 @@
 ---
-title: "minimum-buying-price"
+title: "minimum-buying-price | Right to recall party"
 description: ""
 lang: en
 ---

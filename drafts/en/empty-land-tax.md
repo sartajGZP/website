@@ -1,5 +1,5 @@
 ---
-title: "Empty Land Tax"
+title: "Empty Land Tax | Right to recall party"
 description: ""
 lang: en
 ---

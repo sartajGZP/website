@@ -1,5 +1,5 @@
 ---
-title: "vote-vapasi-passbook"
+title: "vote-vapasi-passbook | Right to recall party"
 description: ""
 lang: en
 ---

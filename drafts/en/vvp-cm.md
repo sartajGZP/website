@@ -1,5 +1,5 @@
 ---
-title: "vvp-cm"
+title: "vvp-cm | Right to recall party"
 description: ""
 lang: en
 ---

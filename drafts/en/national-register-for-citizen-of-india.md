@@ -1,5 +1,5 @@
 ---
-title: "national-register-for-citizen-of-india"
+title: "national-register-for-citizen-of-india | Right to recall party"
 description: ""
 lang: en
 ---

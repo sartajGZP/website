@@ -1,5 +1,5 @@
 ---
-title: "rashtriya-hindu-board"
+title: "rashtriya-hindu-board | Right to recall party"
 description: ""
 lang: en
 ---

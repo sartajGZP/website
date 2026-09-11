@@ -1,5 +1,5 @@
 ---
-title: "reservation"
+title: "reservation | Right to recall party"
 description: ""
 lang: en
 ---

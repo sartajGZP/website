@@ -1,5 +1,5 @@
 ---
-title: "District Jury Court "
+title: "District Jury Court  | Right to recall party"
 description: ""
 lang: en
 ---

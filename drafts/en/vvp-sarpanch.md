@@ -1,5 +1,5 @@
 ---
-title: "vvp-sarpanch"
+title: "vvp-sarpanch | Right to recall party"
 description: ""
 lang: en
 ---

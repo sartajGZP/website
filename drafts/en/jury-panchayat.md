@@ -1,5 +1,5 @@
 ---
-title: "jury-panchayat"
+title: "jury-panchayat | Right to recall party"
 description: ""
 lang: en
 ---
