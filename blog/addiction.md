@@ -52,3 +52,7 @@ every work can be done without it
 ## Ente Photos
 let it stay blocked.
 you may ask for bypass to be disabled.
+
+## Gemini 
+don't use it excluding following topics:
+1. word meaning 
