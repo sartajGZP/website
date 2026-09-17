@@ -55,4 +55,7 @@ you may ask for bypass to be disabled.
 
 ## Gemini 
 don't use it excluding following topics:
-1. word meaning 
+
+
+## Monochrome mode 
+let it stay enabled always 
