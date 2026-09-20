@@ -54,7 +54,7 @@ let it stay blocked.
 you may ask for bypass to be disabled.
 
 ## Gemini 
-don't use it excluding following topics:
+don't use it even for live talking excluding following topics:
 
 
 ## Monochrome mode 

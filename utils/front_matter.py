@@ -34,7 +34,7 @@ def process_directory(lang):
                 or draft.get("hiTitle")
                 or draft["shortName"]
             )
-            title = f"{base_title} | राइट टू रिकॉल पार्टी"
+            title = f"{base_title} | राइट टू रिकॉल पार्टी द्वारा प्रस्तावित कानून"            
             description = draft.get("hiDesc") or ""
         else:
             base_title = (
@@ -42,7 +42,7 @@ def process_directory(lang):
                 or draft.get("enTitle")
                 or draft["shortName"]
             )
-            title = f"{base_title} | Right to recall party"
+            title = f"{base_title} | proposed by Right to recall party"
             description = draft.get("enDesc") or ""
 
         escaped_title = title.replace('"', '\\"')
