@@ -74,7 +74,8 @@ npm install
 ├── eleventy.config.mjs      # Eleventy configuration
 ├── package.json             # Dependencies and build scripts
 ├── AGENTS.md                # AI agent instructions and repository conventions
-└── CSS_ANALYSIS.md          # Comprehensive CSS audit and design guidelines
+├── CSS_ANALYSIS.md          # Comprehensive CSS audit and design guidelines
+└── LAYOUTS_ANALYSIS.md      # Analysis of _includes/layouts templates and inheritance
 ```
 
 ---
