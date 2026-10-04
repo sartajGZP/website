@@ -8,6 +8,7 @@
   padding: 1.25rem;
   margin-block: 1rem 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  min-width: 0;
 }
 
 .fb-post__header {
@@ -32,6 +33,26 @@
   font-size: var(--font-size, 1rem);
   line-height: var(--line-height, 1.6);
   color: #334155;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.fb-post__body a {
+  overflow-wrap: anywhere;
+}
+
+/* TODO(BEM): rename to fb-post__excerpt. Month index renders striptags
+   plain text (no <a>), so long URLs must wrap here, not just on links. */
+.fb-excerpt {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.fb-post img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ========================================================
