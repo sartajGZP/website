@@ -38,11 +38,13 @@ body {
   max-width: 80ch;
   margin-inline: auto;
   padding-inline: 4vw;
+  min-width: 0;
 }
 
 main,
 .content {
   flex: 1;
+  min-width: 0;
   margin-block: 3vw 5vw;
   max-width: 93vw;
   font-family: inherit;
