@@ -4,15 +4,31 @@
 <!-- Typography Toolbar -->
 <div class="reading-toolbar" aria-label="Reading options">
 
-  <!-- Font Family Selector -->
+  <!-- Font Family Selector (language-aware) -->
+  {% if lang == 'hi' %}
+    {% set fontLabel = 'फ़ॉन्ट शैली' %}
+    {% set fontOptions = [
+      { value: "'Noto Sans Devanagari', 'Nirmala UI', 'Mangal', system-ui, -apple-system, sans-serif", label: 'सैन्स-सेरिफ़' },
+      { value: "'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif", label: 'सेरिफ़' },
+      { value: "'Noto Sans Mono Devanagari', monospace, sans-serif", label: 'मोनोस्पेस' },
+      { value: "'Kalam', 'Noto Serif Devanagari', serif", label: 'कर्सिव' }
+    ] %}
+  {% else %}
+    {% set fontLabel = 'Font Style' %}
+    {% set fontOptions = [
+      { value: "system-ui, -apple-system, sans-serif", label: 'Sans-Serif' },
+      { value: "Georgia, serif", label: 'Serif' },
+      { value: "'Courier New', monospace", label: 'Monospace' },
+      { value: "'Times New Roman', Times, serif", label: 'T.N. Roman' },
+      { value: "cursive", label: 'Cursive' }
+    ] %}
+  {% endif %}
   <div class="toolbar-group">
-    <label for="font-family" class="sr-only">Font Style</label>
-    <select id="font-family" class="toolbar-select" title="Font Style">
-      <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
-      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
-      <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
-      <option value="'Times New Roman', Times, serif" style="font-family: 'Times New Roman', Times, serif;">T.N. Roman</option>
-      <option value="cursive" style="font-family: cursive;">Cursive</option>
+    <label for="font-family" class="sr-only">{{ fontLabel }}</label>
+    <select id="font-family" class="toolbar-select" title="{{ fontLabel }}" data-lang="{{ lang or 'en' }}">
+      {% for option in fontOptions %}
+        <option value="{{ option.value }}" style="font-family: {{ option.value }};">{{ option.label }}</option>
+      {% endfor %}
     </select>
   </div>
 

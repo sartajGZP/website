@@ -35,7 +35,7 @@ These are the rules which will always exist
 2. not allowed to use WhatsApp as a browser at any cost. 1 time for an hour a month for work is exempted.
 3. not allowed to use AI chat except 3 specific questions
 4. don't join or see any suggested channel
-
+5. !HD
 ### exemption
 - SSC CGL word meaning 
 
@@ -55,7 +55,8 @@ you may ask for bypass to be disabled.
 
 ## Gemini 
 don't use it even for live talking excluding following topics:
-
-
+	
+## Google
+acces and lose for next month. !HD
 ## Monochrome mode 
 let it stay enabled always 

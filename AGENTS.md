@@ -23,7 +23,7 @@ This repository powers the unofficial website for **Right to Recall Party** (htt
 ├── _data/                   # Global data files (e.g. drafts.json)
 ├── _includes/               # Reusable templates and layouts
 │   ├── components/          # nav-tree.njk, breadcrumb.njk
-│   ├── header/              # header.njk, toolbar.njk, lang-switcher.njk, font.njk
+│   ├── header/              # header.njk, toolbar.njk, lang-switcher.njk, typography-init.njk
 │   ├── layouts/             # base.njk, drafts.njk, fb.njk
 │   ├── search/              # search.njk
 │   └── footer/              # footer.html and footer markdown snippets
