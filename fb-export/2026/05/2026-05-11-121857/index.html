@@ -14,17 +14,34 @@
     gtag('config', 'G-HHVG075GJS');
   </script>
 
-  <script>
-    (function() {
-      const size = localStorage.getItem('user-font-size');
-      const font = localStorage.getItem('user-font-family');
-      const lh = localStorage.getItem('user-line-height');
-      const root = document.documentElement;
-      if (size) root.style.setProperty('--font-size', size + 'rem');
-      if (font) root.style.setProperty('--font-family', font);
-      if (lh) root.style.setProperty('--line-height', lh);
-    })();
-  </script>
+  <!-- Typography FOUC prevention: apply saved prefs before first paint -->
+<script>
+  (function() {
+    const root = document.documentElement;
+    const lang = root.lang || 'en';
+    const size = localStorage.getItem('user-font-size');
+    const lh = localStorage.getItem('user-line-height');
+    // Font is stored per language; fall back to the legacy global key once
+    // (toolbar.js migrates it to the per-language key on load).
+    const font = localStorage.getItem('user-font-family-' + lang)
+      || localStorage.getItem('user-font-family');
+
+    if (size) root.style.setProperty('--font-size', size + 'rem');
+    if (lh) root.style.setProperty('--line-height', lh);
+    if (font) {
+      root.style.setProperty('--font-family', font);
+      // Lazy-load the self-hosted Kalam webfont: only when it is in use.
+      if (font.indexOf('Kalam') !== -1 && !document.querySelector('link[data-font="kalam"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/assets/fonts/kalam.css';
+        link.setAttribute('data-font', 'kalam');
+        document.head.appendChild(link);
+      }
+    }
+  })();
+</script>
+
 
   <title>Facebook Archive | Right to Recall Party (national) | Gulshan Jury KhanpurDe | 2026-05-11</title>
   <link rel="stylesheet" href="/assets/bundle.css">
@@ -64,15 +81,25 @@
 <!-- Typography Toolbar -->
 <div class="reading-toolbar" aria-label="Reading options">
 
-  <!-- Font Family Selector -->
+  <!-- Font Family Selector (language-aware) -->
+  
+    
+    
+  
   <div class="toolbar-group">
     <label for="font-family" class="sr-only">Font Style</label>
-    <select id="font-family" class="toolbar-select" title="Font Style">
-      <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
-      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
-      <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
-      <option value="'Times New Roman', Times, serif" style="font-family: 'Times New Roman', Times, serif;">T.N. Roman</option>
-      <option value="cursive" style="font-family: cursive;">Cursive</option>
+    <select id="font-family" class="toolbar-select" title="Font Style" data-lang="en">
+      
+        <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
+      
+        <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      
+        <option value="&#39;Courier New&#39;, monospace" style="font-family: &#39;Courier New&#39;, monospace;">Monospace</option>
+      
+        <option value="&#39;Times New Roman&#39;, Times, serif" style="font-family: &#39;Times New Roman&#39;, Times, serif;">T.N. Roman</option>
+      
+        <option value="cursive" style="font-family: cursive;">Cursive</option>
+      
     </select>
   </div>
 

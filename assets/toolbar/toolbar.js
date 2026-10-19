@@ -81,19 +81,52 @@ document.addEventListener('DOMContentLoaded', () => {
   weightResetBtn?.addEventListener('click', () => setWeight(400));
 
 
-  // 3. FONT FAMILY (Native Select element)
+  // 3. FONT FAMILY (Native Select element, language-aware)
+  // Self-hosted webfonts are lazy: the stylesheet is injected only when a
+  // selected stack actually references the font.
+  const ensureWebfont = (value) => {
+    if (!value || value.indexOf('Kalam') === -1) return;
+    if (document.querySelector('link[data-font="kalam"]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/assets/fonts/kalam.css';
+    link.setAttribute('data-font', 'kalam');
+    document.head.appendChild(link);
+  };
+
   const fontSelect = document.getElementById('font-family');
   if (fontSelect) {
-    // Priority: Saved LocalStorage Value -> Current Dropdown Value -> First Option
-    const activeFont = localStorage.getItem('user-font-family') || fontSelect.value;
-    
+    // Font preference is stored per language so a Latin stack never leaks
+    // onto Devanagari content (and vice versa) when switching languages.
+    const pageLang = fontSelect.dataset.lang || document.documentElement.lang || 'en';
+    const storageKey = `user-font-family-${pageLang}`;
+
+    // One-time migration from the legacy global key: only adopt it if it is a
+    // valid option for the current language, then remove the legacy key.
+    let savedFont = localStorage.getItem(storageKey);
+    if (!savedFont) {
+      const legacyFont = localStorage.getItem('user-font-family');
+      if (legacyFont && [...fontSelect.options].some((opt) => opt.value === legacyFont)) {
+        savedFont = legacyFont;
+        localStorage.setItem(storageKey, legacyFont);
+        localStorage.removeItem('user-font-family');
+      }
+    }
+
+    // Priority: Saved value for this language -> Current Dropdown Value -> First Option
+    const activeFont = savedFont || fontSelect.value;
+
     // Apply font to CSS variable & ensure dropdown matches
     root.style.setProperty('--font-family', activeFont);
-    fontSelect.value = activeFont;
-    
+    ensureWebfont(activeFont);
+    if ([...fontSelect.options].some((opt) => opt.value === activeFont)) {
+      fontSelect.value = activeFont;
+    }
+
     fontSelect.addEventListener('change', (e) => {
       root.style.setProperty('--font-family', e.target.value);
-      localStorage.setItem('user-font-family', e.target.value);
+      ensureWebfont(e.target.value);
+      localStorage.setItem(storageKey, e.target.value);
     });
   }
 
