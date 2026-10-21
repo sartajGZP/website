@@ -1,20 +1,36 @@
-
-
 .table-wrapper {
+  max-width: 100%;
+  margin-block: var(--space-4);
   overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   -webkit-overflow-scrolling: touch;
 }
 
 .table-wrapper table {
-  width: 145%; /* Change this from max-content to 100% */
-  table-layout: auto; /* This tells the browser to distribute space intelligently */
+  width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
 .table-wrapper th,
 .table-wrapper td {
-  /* Remove white-space: nowrap; so long text can wrap if the screen gets too small */
   text-align: left;
   vertical-align: top;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table-wrapper thead th {
+  background-color: var(--color-surface-alt);
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-wrapper tbody tr:hover {
+  background-color: var(--color-surface-alt);
 }

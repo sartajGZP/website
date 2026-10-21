@@ -2,9 +2,9 @@
    TOOLBAR VARIABLES & UTILITIES
    ======================================================== */
 :root {
-  --toolbar-bg: #f4f4f5;
-  --toolbar-border: #e4e4e7;
-  --toolbar-border-dark: #d4d4d8;
+  --toolbar-bg: var(--color-surface-alt);
+  --toolbar-border: var(--color-border);
+  --toolbar-border-dark: var(--color-border-strong);
 }
 
 .sr-only {
@@ -29,7 +29,7 @@
   margin-top: 0.75rem;
   background: var(--toolbar-bg);
   border: 1px solid var(--toolbar-border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-size: 0.875rem;
   flex-wrap: wrap;
 }
@@ -45,7 +45,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  opacity: 0.7;
+  color: var(--color-text-muted);
 }
 
 .toolbar-divider {
@@ -56,9 +56,10 @@
 
 .toolbar-select {
   padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--toolbar-border-dark);
-  background: #ffffff;
+  background: var(--color-surface);
+  color: var(--color-text);
   font-size: 0.85rem;
   cursor: pointer;
 }
@@ -68,15 +69,16 @@
    ======================================================== */
 .btn-group {
   display: inline-flex;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--toolbar-border-dark);
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .btn-group button {
   border: none;
   background: transparent;
+  color: var(--color-text);
   padding: 0.25rem 0.6rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -84,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 #weight-reset { min-width: 68px; }
@@ -95,12 +97,13 @@
 }
 
 .btn-group button:hover {
-  background: #f0f0f0;
+  background: var(--color-surface-alt);
+  color: var(--color-primary);
 }
 
 .btn-group button.active {
-  background: var(--color-primary, #034ad8);
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 }
 
 /* ========================================================
@@ -120,8 +123,8 @@
   padding: 0.5rem 1rem;
   background-color: var(--toolbar-bg);
   border: 1px solid var(--toolbar-border-dark);
-  border-radius: 6px;
-  color: #111111;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.875rem;
@@ -129,8 +132,8 @@
 }
 
 .nav-btn:hover {
-  background-color: #e4e4e7;
-  color: var(--color-primary, #034ad8);
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
 }
 
 /* ========================================================
@@ -138,7 +141,7 @@
    ======================================================== */
 .btn-group a.lang-switch-btn {
   text-decoration: none;
-  color: #111111;
+  color: var(--color-text);
   padding: 0.25rem 0.5rem;
   font-size: 0.85rem;
   font-weight: 600;
@@ -150,7 +153,8 @@
 }
 
 .btn-group a.lang-switch-btn:hover {
-  background: #f0f0f0;
+  background: var(--color-surface-alt);
+  color: var(--color-primary);
 }
 
 /* Faded look for inactive language */
@@ -162,7 +166,7 @@
 /* Highlight the active language */
 .lang-lbl.active {
   opacity: 1;
-  color: var(--color-primary, #034ad8);
+  color: var(--color-primary);
 }
 
 /* Styling for the separator (।) */
@@ -170,4 +174,3 @@
   opacity: 0.4;
   font-weight: 400;
 }
-
