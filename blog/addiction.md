@@ -43,6 +43,8 @@ These are the rules which will always exist
 block for that month using phone lock.
 if you were unable to block, lock the phone and put away for one week. 
 
+## Rules for downloading videos 
+all type of downloading videos are forbidden. downloading videos for fun will result in a lock on termux for 7 days and repeated offence in same week will multiply that date by min(no. of offences, 28 days)
 
 ## Stitch Photos rules 
 don't use website feature. actually i don't trust myself so this app will stay blocked for whole September 2026.
