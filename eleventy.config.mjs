@@ -16,6 +16,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy("robots.txt");
 
   // Markdown table wrapper
   eleventyConfig.amendLibrary("md", (md) => {
