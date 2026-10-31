@@ -1,8 +1,7 @@
-<!-- Pagefind Container -->
-<div id="search" class="search-container"></div>
-
-<!-- Typography Toolbar -->
+<!-- Typhopography Toolbar -->
 <div class="reading-toolbar" aria-label="Reading options">
+
+  <div class="reading-toolbar__body" id="reading-toolbar-body" data-open="false">
 
   <!-- Font Family Selector (language-aware) -->
   {% if lang == 'hi' %}
@@ -108,4 +107,5 @@
     {% include "header/lang-switcher.njk" %}
   </div>
 
+  </div>
 </div>

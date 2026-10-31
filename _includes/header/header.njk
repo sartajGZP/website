@@ -14,14 +14,27 @@
       </a>
     </div>
 
-    <!-- ROW 2: Search -->
-    {% include "search/search.njk" %}
+    <!-- ROW 2: Search link + reading toolbar toggle -->
+    <div class="header-actions">
+      {% if page.url != "/search/" %}
+        <div class="header-actions__search">
+          <a class="header-search__link" href="/search/">
+            {% if lang == 'hi' %}खोज{% else %}Search{% endif %}
+          </a>
+        </div>
+      {% endif %}
+      <div class="header-actions__toolbar">
+        <button type="button" class="reading-toolbar__toggle" aria-expanded="false" aria-controls="reading-toolbar-body" title="Reading options">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.11-1.65c.18-.14.23-.41.12-.61l-2-3.46c-.12-.22-.37-.3-.59-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.2 14.25 2 14 2h-4c-.25 0-.46.2-.5.46l-.38 2.65c-.61.25-1.17.58-1.69.98l-2.49-1c-.23-.08-.47 0-.59.22l-2 3.46c-.12.21-.07.47.12.61l2.11 1.65c-.05.3-.06.62-.06.94s.01.64.06.94l-2.11 1.65c-.18.14-.23.41-.12.61l2 3.46c.12.22.37.3.59.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.26.25.46.5.46h4c.25 0 .46-.2.5-.46l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.47 0 .59-.22l1.99-3.46c.12-.21.07-.47-.12-.61l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+          </svg>
+          <span class="sr-only">Reading options</span>
+        </button>
+      </div>
+    </div>
 
-    <!-- ROW 3: Display Settings & Language Switcher -->
+    <!-- ROW 3: Pill-shaped reading toolbar -->
     {% include "header/toolbar.njk" %}
-
-    <!-- ROW 4: Navigation Tree -->
-    {% include "components/nav-tree.njk" %}
 
   </div>
 </header>

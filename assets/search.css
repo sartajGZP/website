@@ -1,5 +1,32 @@
+.search-page {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.header-search__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 36px;
+  padding: 0 0.7rem;
+  border: 1px solid var(--toolbar-border-dark);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.header-search__link:hover,
+.header-search__link:focus-visible {
+  background: var(--color-surface-alt);
+  color: var(--color-primary);
+}
+
 pagefind-input {
-  width: 50%; /* adjust width as needed */
+  width: 100%;
 }
 
 

@@ -181,5 +181,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   syncBrowserTheme(initialScheme);
+
+  // 6. EXPANDABLE TOOLBAR
+  const toolbarToggle = document.querySelector('.reading-toolbar__toggle');
+  const toolbarBody = document.getElementById('reading-toolbar-body');
+  const isWideViewport = window.matchMedia('(min-width: 769px)');
+
+  const syncToolbarState = () => {
+    const isOpen = isWideViewport.matches;
+    toolbarBody?.setAttribute('data-open', String(isOpen));
+    toolbarToggle?.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  syncToolbarState();
+
+  toolbarToggle?.addEventListener('click', () => {
+    const isOpen = toolbarBody?.dataset.open === 'true';
+    toolbarBody?.setAttribute('data-open', String(!isOpen));
+    toolbarToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
 });
 

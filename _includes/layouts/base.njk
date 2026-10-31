@@ -29,7 +29,7 @@
 
   {% include "header/header.njk" %}
 
-  <main data-pagefind-body>
+  <main{% if not pagefindIgnore %} data-pagefind-body{% endif %}>
 
     <div class="page-container content prose">
 
