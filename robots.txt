@@ -1,4 +1,2 @@
 User-agent: *
 Disallow: /fb-export/
-
-Sitemap: https://sartaj.in/sitemap.xml
