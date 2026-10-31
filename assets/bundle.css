@@ -60,19 +60,20 @@
   /* Layout */
   --measure: 72ch;
 
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 /* Manual dark override.
-   Keep the system-preferring block below in sync with this one. */
+   OS preference is resolved once in the head script, so only this single
+   dark block is maintained. */
 :root[data-color-scheme="dark"] {
   --color-primary: #8ab8f5;
   --color-primary-strong: #a6c9f9;
   --color-primary-soft: #1f2d43;
   --color-text: #e6e6e6;
   --color-text-muted: #a3adba;
-  --color-heading: #f2f2f2;
   --color-border: #2a3037;
+  --color-heading: #cbd5e1;
   --color-border-strong: #3a424b;
   --color-surface: #171b21;
   --color-surface-alt: #1f242b;
@@ -82,31 +83,6 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
 
   color-scheme: only dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-color-scheme="light"]) {
-    --color-primary: #8ab8f5;
-    --color-primary-strong: #a6c9f9;
-    --color-primary-soft: #1f2d43;
-    --color-text: #e6e6e6;
-    --color-text-muted: #a3adba;
-    --color-heading: #f2f2f2;
-    --color-border: #2a3037;
-    --color-border-strong: #3a424b;
-    --color-surface: #171b21;
-    --color-surface-alt: #1f242b;
-    --color-bg: #101418;
-    --color-focus: #8ab8f5;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
-
-    color-scheme: only dark;
-  }
-}
-
-:root[data-color-scheme="light"] {
-  color-scheme: only light;
 }
 
 *, *::before, *::after {

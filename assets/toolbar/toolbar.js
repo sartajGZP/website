@@ -143,31 +143,32 @@ document.addEventListener('DOMContentLoaded', () => {
   setLineHeight(initialLh);
 
   // 5. COLOR SCHEME
-  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  const schemeSelect = document.getElementById('color-scheme');
-  const schemeModes = ['auto', 'light', 'dark'];
+  // Saved manual choices win; otherwise the OS value is resolved once per load.
+  const syncBrowserTheme = (savedMode) => {
+    const saved = savedMode === 'light' || savedMode === 'dark' ? savedMode : '';
+    const effective = saved
+      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '');
 
-  const syncPagefindTheme = () => {
-    const mode = root.dataset.colorScheme
-      || localStorage.getItem('user-color-scheme')
-      || 'auto';
-    const isDark = mode === 'dark' || (mode !== 'light' && darkQuery.matches);
-    if (isDark) {
+    if (effective) {
+      root.dataset.colorScheme = effective;
+    } else {
+      root.removeAttribute('data-color-scheme');
+    }
+
+    if (effective === 'dark') {
       root.setAttribute('data-pf-theme', 'dark');
     } else {
       root.removeAttribute('data-pf-theme');
     }
   };
 
+  const schemeSelect = document.getElementById('color-scheme');
+  const schemeModes = ['auto', 'light', 'dark'];
+
   const setScheme = (mode) => {
-    if (!schemeModes.includes(mode)) mode = 'auto';
-    if (mode === 'light' || mode === 'dark') {
-      root.dataset.colorScheme = mode;
-    } else {
-      root.removeAttribute('data-color-scheme');
-    }
-    localStorage.setItem('user-color-scheme', mode);
-    syncPagefindTheme();
+    const savedMode = schemeModes.includes(mode) ? mode : 'auto';
+    localStorage.setItem('user-color-scheme', savedMode);
+    syncBrowserTheme(savedMode);
   };
 
   const initialScheme = localStorage.getItem('user-color-scheme') || 'auto';
@@ -179,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
     schemeSelect.addEventListener('change', (e) => setScheme(e.target.value));
   }
 
-  setScheme(initialScheme);
-  darkQuery.addEventListener('change', syncPagefindTheme);
+  syncBrowserTheme(initialScheme);
 });
 

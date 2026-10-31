@@ -24,14 +24,20 @@
       }
     }
 
-    // Color scheme: only a saved manual choice gets an attribute; auto stays
-    // attribute-free so the prefers-color-scheme media query remains live.
+    // Color scheme: a saved manual choice wins; otherwise the OS preference
+    // is resolved once here. There is no live media query to maintain.
     const scheme = localStorage.getItem('user-color-scheme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (scheme === 'light' || scheme === 'dark') {
-      root.dataset.colorScheme = scheme;
+    const savedScheme = scheme === 'light' || scheme === 'dark' ? scheme : '';
+    const effectiveScheme = savedScheme
+      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '');
+
+    if (effectiveScheme) {
+      root.dataset.colorScheme = effectiveScheme;
+    } else {
+      root.removeAttribute('data-color-scheme');
     }
-    if (scheme === 'dark' || (!scheme && systemDark)) {
+
+    if (effectiveScheme === 'dark') {
       root.setAttribute('data-pf-theme', 'dark');
     } else {
       root.removeAttribute('data-pf-theme');
