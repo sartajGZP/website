@@ -142,8 +142,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialLh = localStorage.getItem('user-line-height') || '1.6';
   setLineHeight(initialLh);
 
-  spacingBtns.forEach(btn => {
-    btn.addEventListener('click', () => btn.dataset.lh && setLineHeight(btn.dataset.lh));
-  });
+  // 5. COLOR SCHEME
+  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const schemeSelect = document.getElementById('color-scheme');
+  const schemeModes = ['auto', 'light', 'dark'];
+
+  const syncPagefindTheme = () => {
+    const mode = root.dataset.colorScheme
+      || localStorage.getItem('user-color-scheme')
+      || 'auto';
+    const isDark = mode === 'dark' || (mode !== 'light' && darkQuery.matches);
+    if (isDark) {
+      root.setAttribute('data-pf-theme', 'dark');
+    } else {
+      root.removeAttribute('data-pf-theme');
+    }
+  };
+
+  const setScheme = (mode) => {
+    if (!schemeModes.includes(mode)) mode = 'auto';
+    if (mode === 'light' || mode === 'dark') {
+      root.dataset.colorScheme = mode;
+    } else {
+      root.removeAttribute('data-color-scheme');
+    }
+    localStorage.setItem('user-color-scheme', mode);
+    syncPagefindTheme();
+  };
+
+  const initialScheme = localStorage.getItem('user-color-scheme') || 'auto';
+
+  if (schemeSelect) {
+    if (schemeModes.includes(initialScheme)) {
+      schemeSelect.value = initialScheme;
+    }
+    schemeSelect.addEventListener('change', (e) => setScheme(e.target.value));
+  }
+
+  setScheme(initialScheme);
+  darkQuery.addEventListener('change', syncPagefindTheme);
 });
 

@@ -172,9 +172,11 @@ Scannability rules: near-black headings, muted metadata, underlined links, and n
 
 ### Phase 4 — Theme, identity, and accessibility polish
 
-- [ ] Add dark mode:
+- [x] Add dark mode:
   - token overrides under `@media (prefers-color-scheme: dark)`
-  - optional manual toggle persisted in `localStorage`
+  - manual 3-state control (`auto` / `light` / `dark`) persisted as `user-color-scheme`
+  - FOUC prevention in `typography-init.njk`; Pagefind dark palette synced via `data-pf-theme`
+  - dark palette: bg `#101418`, surface `#171b21`, text `#e6e6e6`, heading `#f2f2f2`, muted `#a3adba`, links `#8ab8f5`
   - ensure images and Pagefind UI remain legible
 - [ ] Add brand assets:
   - `favicon.svg` + fallback

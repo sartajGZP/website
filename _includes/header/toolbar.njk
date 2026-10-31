@@ -76,6 +76,33 @@
 
   <span class="toolbar-divider" aria-hidden="true"></span>
 
+  <!-- Color Scheme Selector -->
+  {% if lang == 'hi' %}
+    {% set colorLabel = 'रंग थीम' %}
+    {% set colorOptions = [
+      { value: 'auto', label: 'सिस्टम' },
+      { value: 'light', label: 'लाइट' },
+      { value: 'dark', label: 'डार्क' }
+    ] %}
+  {% else %}
+    {% set colorLabel = 'Color Theme' %}
+    {% set colorOptions = [
+      { value: 'auto', label: 'System' },
+      { value: 'light', label: 'Light' },
+      { value: 'dark', label: 'Dark' }
+    ] %}
+  {% endif %}
+  <div class="toolbar-group">
+    <label for="color-scheme" class="sr-only">{{ colorLabel }}</label>
+    <select id="color-scheme" class="toolbar-select" title="{{ colorLabel }}">
+      {% for option in colorOptions %}
+        <option value="{{ option.value }}">{{ option.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
   <!-- Language Switcher -->
   <div class="toolbar-group">
     {% include "header/lang-switcher.njk" %}
