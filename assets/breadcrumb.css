@@ -28,27 +28,27 @@
   flex: 0 0 auto;
 }
 
-/* Explicit class targeting avoids global 'main a' conflicts */
 .breadcrumb-link {
   display: inline-flex;
   margin: 0;
-  color: #034ad8;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
 }
 
 .breadcrumb-link:hover {
+  color: var(--color-primary-strong);
   text-decoration: underline;
 }
 
 .breadcrumb-current,
 .breadcrumb-disabled {
-  color: #666666;
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
 .breadcrumb-sep {
-  color: #999999;
+  color: var(--color-text-muted);
   user-select: none;
 }

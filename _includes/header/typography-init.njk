@@ -1,4 +1,4 @@
-<!-- Typography FOUC prevention: apply saved prefs before first paint -->
+<!-- Typography and color-scheme FOUC prevention: apply saved prefs before first paint -->
 <script>
   (function() {
     const root = document.documentElement;
@@ -22,6 +22,19 @@
         link.setAttribute('data-font', 'kalam');
         document.head.appendChild(link);
       }
+    }
+
+    // Color scheme: only a saved manual choice gets an attribute; auto stays
+    // attribute-free so the prefers-color-scheme media query remains live.
+    const scheme = localStorage.getItem('user-color-scheme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (scheme === 'light' || scheme === 'dark') {
+      root.dataset.colorScheme = scheme;
+    }
+    if (scheme === 'dark' || (!scheme && systemDark)) {
+      root.setAttribute('data-pf-theme', 'dark');
+    } else {
+      root.removeAttribute('data-pf-theme');
     }
   })();
 </script>
