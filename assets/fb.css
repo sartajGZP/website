@@ -2,37 +2,42 @@
    FACEBOOK POST & SHARED POST STYLES
    ======================================================== */
 .fb-post {
-  background: #ffffff;
-  border: 1px solid var(--color-border, #e2e8f0);
-  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: 1.25rem;
   margin-block: 1rem 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
   min-width: 0;
 }
 
 .fb-post__header {
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .fb-post__author {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0 0 0.25rem 0;
-  color: #0f172a;
+  color: var(--color-heading);
 }
 
-.fb-post__date {
+.fb-post__date,
+.fb-date {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--color-text-muted);
+}
+
+.fb-date {
+  margin-block: 0 0.75rem;
 }
 
 .fb-post__body {
   font-size: var(--font-size, 1rem);
   line-height: var(--line-height, 1.6);
-  color: #334155;
+  color: var(--color-text);
   min-width: 0;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -61,10 +66,10 @@
 .shared-post {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #f8fafc;
-  border: 1px solid #cbd5e1;
-  border-left: 4px solid #034ad8; /* Accent border indicating shared attachment */
-  border-radius: 6px;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border-strong);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
 }
 
 .shared-post-header {
@@ -77,21 +82,21 @@
 }
 
 .shared-post-header strong {
-  color: #1e293b;
+  color: var(--color-heading);
 }
 
 .shared-post-header a {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #034ad8 !important;
-  text-decoration: underline !important;
-  margin-bottom: 0 !important;
+  color: var(--color-primary);
+  text-decoration: underline;
+  margin-bottom: 0;
 }
 
 .shared-post-header a:hover {
-  color: #022f8a !important;
+  color: var(--color-primary-strong);
 }
 
 /* ========================================================
@@ -100,16 +105,16 @@
 .fb-divider {
   border: 0;
   height: 1px;
-  background-color: #e2e8f0;
+  background-color: var(--color-border);
   margin: 1.5rem 0;
 }
 
 .fb-metadata {
   margin-top: 1.5rem;
   padding: 1rem;
-  background-color: #f8fafc;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
   font-size: 0.9rem;
 }
 
@@ -117,7 +122,7 @@
   font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 0.75rem;
-  color: #0f172a;
+  color: var(--color-heading);
 }
 
 .fb-metadata p {

@@ -9,10 +9,104 @@
    GLOBAL RESET & TOKENS
    ========================= */
 :root {
+  /* Typography */
   --font-family: system-ui, -apple-system, sans-serif;
   --font-size: 1rem;
   --font-weight: 400;
   --line-height: 1.6;
+
+  /* Palette */
+  --color-primary: #0b4f8a;
+  --color-primary-strong: #063a66;
+  --color-primary-soft: #e8f1f8;
+  --color-text: #1a1a1a;
+  --color-text-muted: #555555;
+  --color-heading: #111111;
+  --color-border: #e5e5e5;
+  --color-border-strong: #d4d4d4;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f5f5;
+  --color-bg: #ffffff;
+  --color-focus: #0b4f8a;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Radius & elevation */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-h1: 2em;
+  --text-h2: 1.5em;
+  --text-h3: 1.25em;
+  --text-h4: 1.1em;
+
+  /* Layout */
+  --measure: 72ch;
+
+  color-scheme: light dark;
+}
+
+/* Manual dark override.
+   Keep the system-preferring block below in sync with this one. */
+:root[data-color-scheme="dark"] {
+  --color-primary: #8ab8f5;
+  --color-primary-strong: #a6c9f9;
+  --color-primary-soft: #1f2d43;
+  --color-text: #e6e6e6;
+  --color-text-muted: #a3adba;
+  --color-heading: #f2f2f2;
+  --color-border: #2a3037;
+  --color-border-strong: #3a424b;
+  --color-surface: #171b21;
+  --color-surface-alt: #1f242b;
+  --color-bg: #101418;
+  --color-focus: #8ab8f5;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+  color-scheme: only dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) {
+    --color-primary: #8ab8f5;
+    --color-primary-strong: #a6c9f9;
+    --color-primary-soft: #1f2d43;
+    --color-text: #e6e6e6;
+    --color-text-muted: #a3adba;
+    --color-heading: #e2e8f0;
+    --color-border: #2a3037;
+    --color-border-strong: #3a424b;
+    --color-surface: #171b21;
+    --color-surface-alt: #1f242b;
+    --color-bg: #101418;
+    --color-focus: #8ab8f5;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+    color-scheme: only dark;
+  }
+}
+
+:root[data-color-scheme="light"] {
+  color-scheme: only light;
 }
 
 *, *::before, *::after {
@@ -26,9 +120,14 @@ body {
   margin: 0;
   font-family: var(--font-family);
   font-size: var(--font-size);
+  font-weight: var(--font-weight);
   line-height: var(--line-height);
-  background-color: #d3d1d41e;
-  color: #333;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+br {
+  line-height: 1.5;
 }
 
 /* =========================
@@ -52,26 +151,155 @@ main,
   line-height: inherit;
 }
 
-main p,
-main li,
-main div,
-.content p,
-.content li {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+.content.prose {
+  max-width: var(--measure);
 }
 
-br {
-  line-height: 1.5;
+/* =========================
+   LINKS
+   ========================= */
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  color: var(--color-primary-strong);
+  text-decoration-thickness: 2px;
+}
+
+::selection {
+  background: var(--color-primary-soft);
+  color: var(--color-text);
+}
+
+/* =========================
+   PROSE
+   ========================= */
+:where(.prose) :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-block: 1.8em 0.6em;
+  text-wrap: balance;
+}
+
+:where(.prose) :where(h1) {
+  font-size: var(--text-h1);
+  line-height: 1.15;
+  margin-block-start: 0;
+}
+
+:where(.prose) :where(h2) { font-size: var(--text-h2); }
+:where(.prose) :where(h3) { font-size: var(--text-h3); }
+:where(.prose) :where(h4) { font-size: var(--text-h4); }
+:where(.prose) :where(h5) { font-size: 1em; }
+:where(.prose) :where(h6) { font-size: 0.9em; }
+
+:where(.prose) :where(h1, h2, h3, h4, h5, h6) a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+:where(.prose) :where(h1, h2, h3, h4, h5, h6) a:hover {
+  color: var(--color-primary);
+}
+
+:where(.prose) > :first-child {
+  margin-block-start: 0;
+}
+
+:where(.prose) :where(p, ul, ol, dl, blockquote, pre, figure) {
+  margin-block: 0 1em;
+}
+
+:where(.prose) :where(p) {
+  text-wrap: pretty;
+}
+
+:where(.prose) :where(ul, ol) {
+  padding-inline-start: 1.5em;
+}
+
+:where(.prose) :where(li) {
+  margin-block: 0.25em;
+}
+
+:where(.prose) :where(blockquote) {
+  margin-inline: 0;
+  padding: var(--space-3) var(--space-4);
+  border-inline-start: 4px solid var(--color-primary);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+:where(.prose) :where(blockquote) > :last-child {
+  margin-block-end: 0;
+}
+
+:where(.prose) :where(hr) {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin-block: 2em;
+}
+
+:where(.prose) :where(code, kbd, samp) {
+  padding: 0.15em 0.35em;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-alt);
+  font-size: 0.9em;
+}
+
+:where(.prose) :where(pre) {
+  padding: var(--space-4);
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+}
+
+:where(.prose) :where(pre) :where(code) {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+:where(.prose) :where(img, video) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+:where(.prose) :where(figure) :where(img) {
+  margin: 0;
+}
+
+:where(.prose) :where(figcaption) {
+  margin-block-start: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
+/* =========================
+   FOCUS VISIBILITY
+   ========================= */
+:where(a, button, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 /* =========================
    HEADER
    ========================= */
 .elv-header {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
   z-index: 100;
   position: relative;
 }
@@ -89,12 +317,17 @@ br {
   text-align: center;
 }
 
+.header-brand > a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .brand-link {
   text-decoration: none;
   font-size: clamp(28px, 11vw, 48px);
   font-weight: 900;
   line-height: 1.15;
-  color: #000;
+  color: var(--color-heading);
   letter-spacing: -0.02em;
 }
 
@@ -117,39 +350,20 @@ br {
   align-items: center;
   padding: 0.45rem 0.7rem;
   border-radius: 6px;
-  color: #111;
+  color: var(--color-text);
   font-weight: 500;
   text-decoration: none;
 }
 
 .elv-nav-menu a:hover,
 .elv-nav-menu a:focus-visible {
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--color-surface-alt);
+  color: var(--color-primary);
 }
 
 .header-search {
   display: flex;
   justify-content: center;
-}
-
-/* =========================
-   LINKS & TABLES
-   ========================= */
-a {
-  color: #6200ea;
-  text-decoration: none;
-  font-weight: bold;
-  overflow-wrap: anywhere;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-main a {
-  color: green;
-  display: block;
-  margin-bottom: 2vh;
 }
 
 /* =========================
@@ -162,21 +376,22 @@ footer {
     "social join"
     "disclaimer disclaimer";
   justify-items: center;
-  background-color: #bebcbf;
+  background-color: var(--color-surface-alt);
   text-align: center;
   margin-top: 100px;
   padding: 20px 0 0 0;
   gap: 1.25rem 1rem;
 }
 
-footer p a {
-  color: #1a1a1a;
+footer a {
+  color: var(--color-text);
   font-size: 17px;
   font-weight: 700;
   text-decoration: none;
 }
 
-footer p a:hover {
+footer a:hover {
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
@@ -184,9 +399,9 @@ footer p a:hover {
   grid-area: disclaimer;
   font-size: 12.5px;
   line-height: 1.45;
-  background-color: #aeacaf;
-  color: #2b2b2b;
-  border-top: 1px solid #9e9c9f;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-strong);
   padding: 14px 16px;
   width: 100%;
 }

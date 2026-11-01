@@ -133,17 +133,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. LINE SPACING
   const spacingBtns = document.querySelectorAll('.spacing-btn');
+  const spacingValues = [...spacingBtns].map((btn) => btn.dataset.lh);
   const setLineHeight = (lh) => {
-    root.style.setProperty('--line-height', lh);
-    localStorage.setItem('user-line-height', lh);
-    spacingBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lh === String(lh)));
+    // Keep the value within the offered presets so a stale saved value still
+    // highlights one of the buttons.
+    const value = spacingValues.includes(lh) ? lh : '1.6';
+    root.style.setProperty('--line-height', value);
+    localStorage.setItem('user-line-height', value);
+    spacingBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lh === value));
   };
+
+  spacingBtns.forEach((btn) => {
+    btn.addEventListener('click', () => setLineHeight(btn.dataset.lh));
+  });
 
   const initialLh = localStorage.getItem('user-line-height') || '1.6';
   setLineHeight(initialLh);
 
-  spacingBtns.forEach(btn => {
-    btn.addEventListener('click', () => btn.dataset.lh && setLineHeight(btn.dataset.lh));
+  // 5. COLOR SCHEME
+  // Saved manual choices win; otherwise the OS value is resolved once per load.
+  const syncBrowserTheme = (savedMode) => {
+    const saved = savedMode === 'light' || savedMode === 'dark' ? savedMode : '';
+    const effective = saved
+      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '');
+
+    if (effective) {
+      root.dataset.colorScheme = effective;
+    } else {
+      root.removeAttribute('data-color-scheme');
+    }
+
+    if (effective === 'dark') {
+      root.setAttribute('data-pf-theme', 'dark');
+    } else {
+      root.removeAttribute('data-pf-theme');
+    }
+  };
+
+  const schemeSelect = document.getElementById('color-scheme');
+  const schemeModes = ['auto', 'light', 'dark'];
+
+  const setScheme = (mode) => {
+    const savedMode = schemeModes.includes(mode) ? mode : 'auto';
+    localStorage.setItem('user-color-scheme', savedMode);
+    syncBrowserTheme(savedMode);
+  };
+
+  const initialScheme = localStorage.getItem('user-color-scheme') || 'auto';
+
+  if (schemeSelect) {
+    if (schemeModes.includes(initialScheme)) {
+      schemeSelect.value = initialScheme;
+    }
+    schemeSelect.addEventListener('change', (e) => setScheme(e.target.value));
+  }
+
+  syncBrowserTheme(initialScheme);
+
+  // 6. EXPANDABLE TOOLBAR
+  const toolbarToggle = document.querySelector('.reading-toolbar__toggle');
+  const toolbarBody = document.getElementById('reading-toolbar-body');
+  const isWideViewport = window.matchMedia('(min-width: 769px)');
+
+  const syncToolbarState = () => {
+    const isOpen = isWideViewport.matches;
+    toolbarBody?.setAttribute('data-open', String(isOpen));
+    toolbarToggle?.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  syncToolbarState();
+
+  toolbarToggle?.addEventListener('click', () => {
+    const isOpen = toolbarBody?.dataset.open === 'true';
+    toolbarBody?.setAttribute('data-open', String(!isOpen));
+    toolbarToggle.setAttribute('aria-expanded', String(!isOpen));
   });
 });
 

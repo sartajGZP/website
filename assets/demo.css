@@ -1,0 +1,71 @@
+/* ========================================================
+   DEMO EVENTS TIMELINE
+   ======================================================== */
+.demo-timeline {
+  margin-block: 1.5rem;
+}
+
+.demo-event {
+  margin-bottom: var(--space-6, 2rem);
+  padding: var(--space-4, 1rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--color-surface);
+}
+
+.demo-event__title {
+  margin-block: 0 var(--space-3, 0.75rem);
+  color: var(--color-heading);
+  line-height: 1.3;
+}
+
+.demo-event__date {
+  font-size: var(--text-lg, 1.125rem);
+}
+
+.demo-event__location {
+  font-size: var(--text-base, 1rem);
+  color: var(--color-text-muted);
+}
+
+.demo-event__meta {
+  list-style: none;
+  margin: 0 0 var(--space-3, 0.75rem);
+  padding: 0;
+}
+
+.demo-event__meta-item {
+  margin-block: var(--space-1, 0.25rem);
+}
+
+.demo-event__label {
+  color: var(--color-heading);
+}
+
+.demo-event__note {
+  margin-block: 0 var(--space-3, 0.75rem);
+}
+
+.demo-event__links-heading {
+  margin-block: var(--space-3, 0.75rem) var(--space-2, 0.5rem);
+  font-size: var(--text-h3, 1.25em);
+  color: var(--color-heading);
+}
+
+.demo-event__links {
+  margin: 0;
+  padding-left: var(--space-5, 1.5rem);
+}
+
+.demo-event__links-item {
+  margin-block: var(--space-1, 0.25rem);
+  overflow-wrap: anywhere;
+}
+
+.demo-event__link {
+  color: var(--color-primary);
+}
+
+.demo-event__comment {
+  color: var(--color-text-muted);
+}
