@@ -4,6 +4,7 @@
 @import "search.css";
 @import "toolbar/toolbar.css";
 @import "table.css";
+@import "demo.css";
 
 /* =========================
    GLOBAL RESET & TOKENS
@@ -60,11 +61,12 @@
   /* Layout */
   --measure: 72ch;
 
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 /* Manual dark override.
-   Keep the system-preferring block below in sync with this one. */
+   OS preference is resolved once in the head script, so only this single
+   dark block is maintained. */
 :root[data-color-scheme="dark"] {
   --color-primary: #8ab8f5;
   --color-primary-strong: #a6c9f9;
@@ -82,27 +84,6 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
 
   color-scheme: only dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-color-scheme="light"]) {
-    --color-primary: #8ab8f5;
-    --color-primary-strong: #a6c9f9;
-    --color-primary-soft: #1f2d43;
-    --color-text: #e6e6e6;
-    --color-text-muted: #a3adba;
-    --color-heading: #e2e8f0;
-    --color-border: #2a3037;
-    --color-border-strong: #3a424b;
-    --color-surface: #171b21;
-    --color-surface-alt: #1f242b;
-    --color-bg: #101418;
-    --color-focus: #8ab8f5;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
-
-    color-scheme: only dark;
-  }
 }
 
 :root[data-color-scheme="light"] {
@@ -145,6 +126,7 @@ main,
   flex: 1;
   min-width: 0;
   margin-block: 3vw 5vw;
+  margin-inline: auto;
   max-width: 93vw;
   font-family: inherit;
   font-size: inherit;
@@ -361,9 +343,51 @@ a:hover {
   color: var(--color-primary);
 }
 
-.header-search {
+.header-actions {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.header-actions__search {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+
+  .header-actions__search {
+    flex: 3 1 0%;
+    min-height: 36px;
+    align-items: stretch;
+  }
+
+  .header-actions__toolbar {
+    flex: 1 1 0%;
+    min-height: 36px;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .header-search__link {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* =========================
