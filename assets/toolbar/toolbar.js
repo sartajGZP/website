@@ -133,11 +133,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. LINE SPACING
   const spacingBtns = document.querySelectorAll('.spacing-btn');
+  const spacingValues = [...spacingBtns].map((btn) => btn.dataset.lh);
   const setLineHeight = (lh) => {
-    root.style.setProperty('--line-height', lh);
-    localStorage.setItem('user-line-height', lh);
-    spacingBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lh === String(lh)));
+    // Keep the value within the offered presets so a stale saved value still
+    // highlights one of the buttons.
+    const value = spacingValues.includes(lh) ? lh : '1.6';
+    root.style.setProperty('--line-height', value);
+    localStorage.setItem('user-line-height', value);
+    spacingBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lh === value));
   };
+
+  spacingBtns.forEach((btn) => {
+    btn.addEventListener('click', () => setLineHeight(btn.dataset.lh));
+  });
 
   const initialLh = localStorage.getItem('user-line-height') || '1.6';
   setLineHeight(initialLh);

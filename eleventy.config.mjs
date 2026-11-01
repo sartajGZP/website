@@ -137,6 +137,20 @@ export default function(eleventyConfig) {
     });
   });
 
+    // Custom date formatter for EHS demo data (India locale)
+  eleventyConfig.addFilter("formatDate", function(dateString) {
+    const date = new Date(dateString);
+    
+    const year = date.getUTCFullYear();
+    // Use 'en-IN' for India
+    const month = date.toLocaleString('en-IN', { month: 'long', timeZone: 'UTC' });
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    
+    // Formats as "2026 January 10"
+    return `${year} ${month} ${day}`;
+  });
+
+
   return {
     dir: {
       input: ".",

@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: EHS Demo Events Log
+eleventyNavigation:
+  key: EHS Demo
+---
+
+<h1>EVM Hatao Sena Demo Events</h1>
+
+<div class="demo-timeline">
+  
+  {# This loop automatically grabs ehs_demo.json, sorts by date, and reverses for newest-first #}
+  {% for entry in ehs_demo | sort(attribute="date") | reverse %}
+    
+    <article class="demo-event">
+      <h2 class="demo-event__title">
+        <span class="demo-event__date">{{ entry.date | formatDate }}</span><br>
+        <span class="demo-event__location">{{ entry.location }}</span>
+      </h2>
+
+      <ul class="demo-event__meta">
+        <li class="demo-event__meta-item"><strong class="demo-event__label">Status:</strong> {{ entry.status | default("Unknown", true) }}</li>
+        {% if entry.organisers %}
+          <li class="demo-event__meta-item"><strong class="demo-event__label">Organised By:</strong> {{ entry.organisers }}</li>
+        {% endif %}
+      </ul>
+
+      {% if entry.note %}
+        <p class="demo-event__note"><strong class="demo-event__label">Note:</strong> {{ entry.note }}</p>
+      {% endif %}
+
+      {% if entry.links | length %}
+        <h3 class="demo-event__links-heading">Links & References</h3>
+        <ul class="demo-event__links">
+          {% for link in entry.links %}
+            <li class="demo-event__links-item">
+              <a class="demo-event__link" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.url | truncate(70) }}</a>
+              {% if link.comment %}<span class="demo-event__comment"> - {{ link.comment }}</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </article>
+
+  {% endfor %}
+</div>
+

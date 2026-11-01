@@ -11,4 +11,5 @@ In most states of the USA, the public has the right to elect and recall police c
 We are working to bring the law of right to recall SP, Right to Recall Judge and bring Jury Court in india.
 Please take a look at law drafts of [Jury Court](/drafts/en/jury-court) as words can not convey the full meaning of these proposals
 
+This is not an Official website of Right To Recall Party
 [Contact Me](contact)
