@@ -1,0 +1,5 @@
+{
+  "lang": "hi",
+  "tags": ["bandi-jeevan"],
+  "layout": "layouts/base.njk"
+}

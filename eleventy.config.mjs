@@ -1,3 +1,5 @@
+import wikiEditorPlugin from "./wiki-editor.mjs";
+
 import navigationPlugin from "@11ty/eleventy-navigation";
 import { getTranslatedUrl } from './utils/language-helper.js';
 
@@ -9,6 +11,7 @@ export default function(eleventyConfig) {
 
   // Plugins
   eleventyConfig.addPlugin(navigationPlugin);
+  eleventyConfig.addPlugin(wikiEditorPlugin);
 
   // Passthrough files
   eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
