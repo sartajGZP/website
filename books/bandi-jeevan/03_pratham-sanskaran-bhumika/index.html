@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="google-site-verification"
+        content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HHVG075GJS');
+  </script>
+
+  <!-- Typography and color-scheme FOUC prevention: apply saved prefs before first paint -->
+<script>
+  (function() {
+    const root = document.documentElement;
+    const lang = root.lang || 'en';
+    const size = localStorage.getItem('user-font-size');
+    const lh = localStorage.getItem('user-line-height');
+    // Font is stored per language; fall back to the legacy global key once
+    // (toolbar.js migrates it to the per-language key on load).
+    const font = localStorage.getItem('user-font-family-' + lang)
+      || localStorage.getItem('user-font-family');
+
+    if (size) root.style.setProperty('--font-size', size + 'rem');
+    if (lh) root.style.setProperty('--line-height', lh);
+    if (font) {
+      root.style.setProperty('--font-family', font);
+      // Lazy-load the self-hosted Kalam webfont: only when it is in use.
+      if (font.indexOf('Kalam') !== -1 && !document.querySelector('link[data-font="kalam"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/assets/fonts/kalam.css';
+        link.setAttribute('data-font', 'kalam');
+        document.head.appendChild(link);
+      }
+    }
+
+    // Color scheme: a saved manual choice wins; otherwise the OS preference
+    // is resolved once here. There is no live media query to maintain.
+    const scheme = localStorage.getItem('user-color-scheme');
+    const savedScheme = scheme === 'light' || scheme === 'dark' ? scheme : '';
+    const effectiveScheme = savedScheme
+      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '');
+
+    if (effectiveScheme) {
+      root.dataset.colorScheme = effectiveScheme;
+    } else {
+      root.removeAttribute('data-color-scheme');
+    }
+
+    if (effectiveScheme === 'dark') {
+      root.setAttribute('data-pf-theme', 'dark');
+    } else {
+      root.removeAttribute('data-pf-theme');
+    }
+  })();
+</script>
+
+
+  <title>Right to Recall Party</title>
+
+  <link rel="stylesheet" href="/assets/bundle.css?v=2">
+  <script type="module" src="/assets/bundle.js"></script>
+
+</head>
+
+<body>
+
+  <header data-pagefind-ignore class="elv-header">
+  <div class="page-container elv-header-inner">
+
+    <!-- ROW 1: Party name -->
+    <div class="header-brand">
+      <a href="/hi/">
+        <span class="brand-link">
+          
+            राइट टू रिकॉल<br>पार्टी
+          
+        </span>
+      </a>
+    </div>
+
+    <!-- ROW 2: Search link + reading toolbar toggle -->
+    <div class="header-actions">
+      
+        <div class="header-actions__search">
+          <a class="header-search__link" href="/search/">
+            खोज
+          </a>
+        </div>
+      
+      <div class="header-actions__toolbar">
+        <button type="button" class="reading-toolbar__toggle" aria-expanded="false" aria-controls="reading-toolbar-body" title="Reading options">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.11-1.65c.18-.14.23-.41.12-.61l-2-3.46c-.12-.22-.37-.3-.59-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.2 14.25 2 14 2h-4c-.25 0-.46.2-.5.46l-.38 2.65c-.61.25-1.17.58-1.69.98l-2.49-1c-.23-.08-.47 0-.59.22l-2 3.46c-.12.21-.07.47.12.61l2.11 1.65c-.05.3-.06.62-.06.94s.01.64.06.94l-2.11 1.65c-.18.14-.23.41-.12.61l2 3.46c.12.22.37.3.59.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.26.25.46.5.46h4c.25 0 .46-.2.5-.46l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.47 0 .59-.22l1.99-3.46c.12-.21.07-.47-.12-.61l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+          </svg>
+          <span class="sr-only">Reading options</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ROW 3: Pill-shaped reading toolbar -->
+    <!-- Typhopography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+
+  <div class="reading-toolbar__body" id="reading-toolbar-body" data-open="false">
+
+  <!-- Font Family Selector (language-aware) -->
+  
+    
+    
+  
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">फ़ॉन्ट शैली</label>
+    <select id="font-family" class="toolbar-select" title="फ़ॉन्ट शैली" data-lang="hi">
+      
+        <option value="&#39;Noto Sans Devanagari&#39;, &#39;Nirmala UI&#39;, &#39;Mangal&#39;, system-ui, -apple-system, sans-serif" style="font-family: &#39;Noto Sans Devanagari&#39;, &#39;Nirmala UI&#39;, &#39;Mangal&#39;, system-ui, -apple-system, sans-serif;">सैन्स-सेरिफ़</option>
+      
+        <option value="&#39;Noto Serif Devanagari&#39;, &#39;Kohinoor Devanagari&#39;, &#39;Devanagari Sangam MN&#39;, serif" style="font-family: &#39;Noto Serif Devanagari&#39;, &#39;Kohinoor Devanagari&#39;, &#39;Devanagari Sangam MN&#39;, serif;">सेरिफ़</option>
+      
+        <option value="&#39;Noto Sans Mono Devanagari&#39;, monospace, sans-serif" style="font-family: &#39;Noto Sans Mono Devanagari&#39;, monospace, sans-serif;">मोनोस्पेस</option>
+      
+        <option value="&#39;Kalam&#39;, &#39;Noto Serif Devanagari&#39;, serif" style="font-family: &#39;Kalam&#39;, &#39;Noto Serif Devanagari&#39;, serif;">कर्सिव</option>
+      
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Boldness Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="weight-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="weight-label">
+      <button type="button" id="weight-down" title="Decrease boldness" aria-label="Decrease boldness">B−</button>
+      <button type="button" id="weight-reset" title="Reset boldness" aria-label="Reset boldness">Normal</button>
+      <button type="button" id="weight-up" title="Increase boldness" aria-label="Increase boldness">B+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Color Scheme Selector -->
+  
+    
+    
+  
+  <div class="toolbar-group">
+    <label for="color-scheme" class="sr-only">रंग थीम</label>
+    <select id="color-scheme" class="toolbar-select" title="रंग थीम">
+      
+        <option value="auto">सिस्टम</option>
+      
+        <option value="light">लाइट</option>
+      
+        <option value="dark">डार्क</option>
+      
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Language Switcher -->
+  <div class="toolbar-group">
+    
+
+<div class="btn-group">
+  <a href="/" id="lang-switch-link" class="lang-switch-btn" data-current-url="/books/bandi-jeevan/03_pratham-sanskaran-bhumika/" title="Switch Language">
+    <span class="lang-lbl active">हि</span>
+    <span class="lang-sep">।</span>
+    <span class="lang-lbl ">en</span>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const link = document.getElementById('lang-switch-link');
+    if (!link) return;
+
+    const currentUrl = link.dataset.currentUrl;
+    const currentLang = "hi"; 
+    const targetLang = currentLang === 'en' ? 'hi' : 'en';
+
+    const saveKey = 'return_path_' + currentLang;
+    const lookupKey = 'return_path_' + targetLang;
+
+    const justSwitched = sessionStorage.getItem('just_switched');
+    const savedReturnPath = sessionStorage.getItem(lookupKey);
+    const isCurrentlyHome = (currentUrl === '/' || currentUrl === '/hi/');
+
+    if (justSwitched === 'true') {
+      sessionStorage.removeItem('just_switched');
+    } else {
+      sessionStorage.removeItem('return_path_en');
+      sessionStorage.removeItem('return_path_hi');
+    }
+
+    if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+      link.setAttribute('href', sessionStorage.getItem(lookupKey));
+    }
+
+    link.addEventListener('click', () => {
+      sessionStorage.setItem(saveKey, currentUrl);
+      sessionStorage.setItem('just_switched', 'true');
+
+      if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+        sessionStorage.removeItem(lookupKey);
+      }
+    });
+  });
+</script>
+
+  </div>
+
+  </div>
+</div>
+
+
+    <!-- ROW 4: Navigation Tree -->
+    
+<nav class="docs-nav" aria-label="Navigation Tree">
+  <ul class="docs-nav__list">
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">blog</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              
+              
+                <li class="docs-nav__subitem">
+                  <a class="docs-nav__link docs-nav__link--overview" href="/blog/">
+                    blog Overview
+                  </a>
+                </li>
+              
+
+              
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/blog/22-July-2026/">
+                        blog-2026-08-22
+                      </a>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/blog/addiction/">
+                        addiction
+                      </a>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">books</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              
+              
+                <li class="docs-nav__subitem">
+                  <a class="docs-nav__link docs-nav__link--overview" href="/books/">
+                    books Overview
+                  </a>
+                </li>
+              
+
+              
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/books/bandi-jeevan/">
+                        Bandi Jeevan
+                      </a>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <a class="docs-nav__link docs-nav__link--root" href="/demo/">
+            EHS Demo
+          </a>
+        
+
+      </li>
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">drafts</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              
+              
+                <li class="docs-nav__subitem">
+                  <a class="docs-nav__link docs-nav__link--overview" href="/drafts/">
+                    drafts Overview
+                  </a>
+                </li>
+              
+
+              
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/drafts/en/">
+                        english
+                      </a>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="/drafts/hi/">
+                        हिंदी
+                      </a>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+      <li class="docs-nav__item">
+
+        
+        
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">Facebook</span>
+            </summary>
+            
+            <ul class="docs-nav__sublist">
+              <li class="docs-nav__subitem">
+                <a class="docs-nav__link docs-nav__link--overview" href="/fb-export/">
+                  Facebook Home
+                </a>
+              </li>
+
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2026</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2026/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2025</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2025/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2024</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2024/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2023</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2023/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2022</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2022/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2021</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2021/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2020</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2020/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2019</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2019/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2018</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2018/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2017</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2017/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2016</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2016/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2015</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2015/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2014</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/05/">
+                                05
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/04/">
+                                04
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/03/">
+                                03
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/02/">
+                                02
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2014/01/">
+                                01
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2013</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2013/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2013/11/">
+                                11
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2013/10/">
+                                10
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2013/09/">
+                                09
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2013/08/">
+                                08
+                              </a>
+                            </li>
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2013/07/">
+                                07
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2012</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2012/06/">
+                                06
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">2011</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/2011/12/">
+                                12
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </details>
+                    </li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </details>
+
+        
+        
+
+      </li>
+    
+  </ul>
+</nav>
+
+
+
+  </div>
+</header>
+
+
+  <main data-pagefind-body>
+
+    <div class="page-container content prose">
+
+      <!-- Breadcrumb -->
+      
+
+      <!-- Page content -->
+      <p><a id="bhumika"></a></p>
+<h1>प्रथम संस्करण की भूमिका</h1>
+<p>किसी समाज को पहचानने के लिए उस समाज के साहित्य से परिचित होने की परम आवश्यकता होती है, क्योंकि समाज के प्राणों की चेतना उस समाज के साहित्य में भी प्रतिफलित हुआ करती है। आज भारत ध्वंस और निर्माण के बीच क्रमशः अपनी सार्थकता को खोजता फिरता है, अतः भारत का समाज यदि सजीव होगा तो भारत के प्राणों की इस अशान्ति का चित्र उसके साहित्य में अवश्य ही अपने प्रतिबिम्ब को अंकित कर देगा। हम भारतवासी आज यह नहीं जानते कि इस अशान्त अटूट गति का वेग कितना प्रचण्ड है, किन्तु हमारे पश्चात् आनेवाली पीढ़ी इस गति के वेग को बखूबी बतला सकेगी। भारत के इस ध्वंस और निर्माण के उद्योग के बीच जितनी बड़ी शक्ति का स्फुरण हो रहा है उसके स्वरूप को जानने का समय शायद अभी आया नहीं। इस बनाव-विगाड़ का एक चित्र—भले ही वह अस्पष्ट और मलिन हो—भारत की इस भाग्य-परीक्षा की एक धुंधली-सी छाया आज भारत के साहित्य में भी धीरे-धीरे प्रकट हो रही है। इसी से 'निर्वासन-काहिनी', 'कारा-काहिनी', 'द्विपान्तरेर कथा', 'निर्वासितेर आत्म-कथा' घोर 'बांग्लाय विप्लव-वाद' आदि ग्रन्थ बेंग भाषा के साहित्य में क्रमशः  test edit प्रकाशित हो रहे हैं। भारत के प्राण आज जैसे कुछ छटपटा रहे हैं, उस छटपटाहट (अशान्ति) का पूरा स्वरूप उसके साहित्य में प्रकाशित नहीं हो सका; अभी नहीं हुआ तो न सही, क्रमशः आगे होगा। 'निर्वासितेर आत्म-कथा' इत्यादि पुस्तकें जिस श्रेणी की हैं उस श्रेणी के अन्तर्गत मेरी यह पुस्तक 'बन्दी जीवन' भी है। इस श्रेणी की कई पुस्तकें जब पहले से मौजूद थीं तब फिर यह 'बन्दी जीवन' मैंने क्यों लिखी ? इसका विशेष कारण सुन लीजिए।</p>
+<p>मुझे यह कहना है कि सजीव जातियों में छानबीन करने की प्रवृत्ति बहुत प्रबल होती है। इस जांच-पड़ताल करने की प्रवृत्ति के कारण ही सजीव जातियां अपने समाज के रत्ती-रत्ती समाचार के लिए चौकन्नी रहती हैं। शायद एक देहाती के बेदाग वंश-वृक्ष का पेड़-पत्ता जानने में किसी ने अपनी सारी उम्र इस आशा से बिता दी थी कि इस प्रकार तथ्य संग्रह कर देने से कदाचित् किसी दिन किसी को वंशानुक्रम की धारा का पता लगाने में सुभीता हो जाय। भारत के वर्तमान समाज की भीतरी वेदना का परिचय, उसका परिमाण और उसका कारण जानने का समय क्या अभी तक उपस्थित नहीं हुआ ? उस भीतरी वेदना -दर्दे दिल- को हटा देने की इच्छा से भारत में जो अभिनव आन्दोलन आरम्भ हुआ है वह आन्दोलन कितना व्यापक और गम्भीर है, कहाँ-कहाँ पर उसमें कोर-कसर और भूल-चूक रह गई है, वह आन्दोलन किस परिमाण में सार्थक हुआ और कितना अपूर्ण रह गया है तथा उसमे यह अधूरापन क्यों रह गया—इन सारी बातों का जान लेना क्या प्रत्येक भारतवासी का कर्तव्य नहीं ? इन सारी बातों को जानने के लिए इस ढंग की बहुतेरी पुस्तकों के प्रकाशित होने की आवश्यकता है जिस ढंग की कि यह पुस्तक 'बन्दी जीवन' है। ऐसी-ऐसी जितनी पुस्तकें प्रकाशित होंगी मुख्य विषय को समझना उतना ही आसान हो जायगा।</p>
+<p>मेरा वक्तव्य यह है कि 'कारा-कहिनी' के ढंग की जितनी पुस्तकें प्रकाशित हुई हैं उनमें अरविन्द बाबू की 'कारा-कहिनी' और बाबू नलिनी-किशोर-लिखित 'बांग्लाय विप्लव-वाद' नामक पुस्तकें मुझे सर्वश्रेष्ठ जंचीं। हाँ, अरविन्द बाबू ने सिर्फ कलकत्ते के कारागार की ही कथा लिखी है, और मैं चाहता हूँ कि लाहौर, बनारस, कलकत्ता और अंडमान की बातें इसी ढंग से लिखूं तथा इस सिलसिले में पंजाब, युक्त-प्रदेश, बंगाल और अंग्रेज-शासित भारत के अन्यान्य प्रदेशों के मानव-चरित्र की भी थोड़ी-बहुत चर्चा करूँ। सच पूछो तो 'बांग्लाय विप्लव-वाद' के लेखक ने वे बातें जो कि मुझे कहनी हैं, मेरी अपेक्षा कहीं अच्छे ढंग से प्रकट कर दी हैं। भाषा पर यद्यपि मेरा उनकी भांति अधिकार नहीं है, फिर भी अभी तक बहुतेरी बातें प्रकट करने को रह गई हैं, बंगाल की बातों का वर्णन करते समय ही मैं उनकी चर्चा करना चाहता हूँ। मैं बखूबी जानता हूँ कि भाषा की दृष्टि में मैं सुन्दर नहीं लिख सका; और इस दृष्टि से तो उपेन्द्र बाबू की पुस्तक के साथ किसी की भी पुस्तक टक्कर लेने योग्य नहीं। ताना देने और मजाक करने की ऐसी कुशलता बंगाल में कदाचित् ही किसी और लेखक में हो। उपेन्द्र बाबू निस्सन्देह बंगाल के शक्तिशाली लेखक हैं। किन्तु उनकी 'आत्म-कथा' में बहुत ही गुरुतर विषयों की आलोचना भी बिलकुल साधारण रीति पर की गई है, मानो उनका उसी में कौतुक है। इसी कारण 'निर्वासितेर आत्म-कथा' चित्ताकर्षक होने पर भी मर्मस्पर्शिनी नहीं हुई। और वारीन्द्र बाबू की 'द्वीपान्तरेर कथा' में जो भाग उपेन्द्र बाबू का लिखा हुआ है वही मुझे अच्छा लगा। उक्त पुस्तक का आधे से भी अधिक अंश उपेन्द्र बाबू का ही लिखा हुआ है। बाबू वारीन्द्र कुमार घोष ने यद्यपि लिखा यही है कि &quot;यह दो मुखों की एक ही बात है&quot; किन्तु यह सभी की समझ में आ जाता है कि यह दो मुखों की साफ-साफ अलग-अलग बातें हैं। वारीन्द्र बाबू के लिखे हुए अंश में, बीच-बीच में यद्यपि खासा कवित्व है, तथापि, सच तो यह है कि उसमें भी विप्लव वादियों की मर्म-कथा प्रकट नहीं हुई। इसके सिवा इसमें इस द्वीपान्तर की कथा की बहुतेरी बातें आसानी से दबा दी गई है। ऐसा क्यों हुआ है, इसका विचार यथास्थान करने की इच्छा है।</p>
+<p>'बन्दी जीवन' के इस खण्ड में यही लिखने की चेष्टा की गई है कि यूरोप के महायुद्ध के समय भारत में क्रान्ति की कैसी-क्या तैयारी की गई थी। रौलट-रिपोर्ट में तो इसका यह पहलू बिल्कुल ही छिपा दिया गया है परन्तु 'टाइम्स हिस्ट्री ऑफ़ दी ग्रेट वार' (Time's History of the Great War, volume dealing with India) नाम की पुस्तक में इसका थोड़ा-सा उल्लेख आ गया है। माना कि क्रान्ति की इस तैयारी का उपयोग नहीं किया जा सका, फिर भी सफलता या विफलता के दृष्टिकोण से इसकी महानता का फैसला करना ठीक नहीं। पितामह भीष्म का महत् चरित्र क्या कुरुक्षेत्र के महा संग्राम में उनकी हार-जीत पर अवलम्बित है ?</p>
+<p>इस पुस्तक के दूसरे खण्ड में यह बतलाने की इच्छा है कि युद्ध छिड़ने के पूर्व भारतीय विप्लववादियों की क्या दशा थी और उनके मन की गति ने किस-किस प्रकार आघात लगने से कैसा-क्या भाव धारण किया था। इसके पश्चात् मेरे फरार हो जाने की दशा, फिर गिरफ्तार होने और मुकदमा चलने एवं 'बन्दी जीवन' का वर्णन करने का विचार है। मेरी गिरफ्तारी हो जाने के बाद भी भारत और बर्मा में जिस प्रकार क्रान्ति की गुप्त योजना की जा रही थी उसका भी वर्णन करने का मेरा इरादा है।</p>
+<p>सुना है कि वारीन्द्रकुमार के साथी उल्लसकर दत्त अण्डमान टापू मे कहते ये कि &quot;हमें गलत लोगों से काम पड़ा है, ये हाथ और पांव तो काटेंगे ही इसके सिवा रगड़ी से रगड़कर चमड़ी उतारेंगे।&quot; ऐसे सख्त लोगों के हाथ से मुझे मेरी छुटकारा मिला था, इसका  भी अंत से वर्णन करने की अभिलाषा है। जीवन में तरह-तरह की चोटें लगने से अन्त में मन की क्या दशा हुई, उसको एक बात में न कहकर क्रमशः स्पष्ट करने की चेष्टा की जाएगी। मेरी अभी तक यह धारणा है कि यह पुस्तक तीन खण्डों में समाप्त होगी, लेकिन कर्मक्षेत्र की विषम उलझनों में पड़कर मैं नहीं कह सकता कि इस पुस्तक का कितना अंश पूरा लिख पाऊंगा । कारण, आज तक जितने काम मैंने अपने हाथ में लिए, किसी को भी मैं निश्चित रूप से पूर्ण नहीं कर पाया।</p>
+<p>25 अगस्त, 1922
+कलकत्ता।</p>
+<p>—शचीन्द्रनाथ सान्याल</p>
+<h1>चतुर्थ संस्करण की भूमिका</h1>
+<p>आज से 10 साल पहले 'बन्दी जीवन' का लिखना प्रारम्भ किया था। 'बन्दी जीवन' के प्रथम संस्करण की भूमिका में मैंने लिखा था 'मेरी अभी तक यह धारणा है कि यह पुस्तक तीन खण्डों में समाप्त होगी, लेकिन कर्मक्षेत्र की विषम उलझनों में पड़कर मैं नहीं कह सकता कि इस पुस्तक का कितना अंश लिखा जा सकेगा। कारण आज तक जितने काम मैंने अपने हाथ में लिए, किसी को भी मैं निश्चित रूप से पूर्ण नहीं कर पाया।' ये वाक्य कलकत्ता में बैठे हुए 25 अगस्त, सन् '22 के दिन मैंने लिखे थे। संतुष्ट की बात यही है कि इस पुस्तक के दो भाग भी मैं यथार्थ रूप में लिख नहीं पाया था कि फिर जेल में धर घसीटा गया। अब 10 साल के बाद आज फिर इस पुस्तक के सम्पादन कार्य में हाथ लगाया है।</p>
+<p>मैं फरवरी, सन् '20 में बन्दीगृह से छूटा। लौटकर माताजी एवं भाइयों के अनुरोध से ईंट बनवाने के काम में फँस गया। किसी कारोबार में फँसने से कितनी उलझनों में जान फँस जाती है इसको भुक्तभोगी ही जान सकता है। इसी उलझन में पड़े हुए मैंने 'बन्दी जीवन' लिखना प्रारम्भ किया। इसके थोड़े ही दिन बाद सन् '21 के शुरू में मैं जमशेदपुर में मजदूर संगठन के कार्य में लग गया।</p>
+<p>मेरी इच्छा तो यह थी कि मैं बन्दी-जीवन को धीरे-धीरे लिखता जाऊँ लेकिन मेरे एक मित्र श्री हेमन्तकुमार सरकार जबर्दस्ती मेरी हस्तलिखित पोथी को प्रकाशनार्थ ले गए। उस समय हेमन्तकुमार देशबन्धु सी० आर० दास के विश्वस्त अनुयायियों में थे। सी० आर० दास के सम्पादकत्व में 'नारायण' नाम का एक मासिक-पत्र निकलता था। हेमन्तकुमार इस मासिक-पत्र का संचालन-भार लिये हुए थे। मुझे विश्वास नहीं था कि मेरा लेख प्रकाशित करने के योग्य है। हेमन्तकुमार ने मुझे आश्वासन दिया कि मेरा लेख काफी अच्छा है, और इसे वे 'नारायण' में अवश्य प्रकाशित कराएँगे। इस प्रकार से जीवन में सर्वप्रथम मैंने लिखना प्रारम्भ किया।</p>
+<p>लेकिन मैं अधिक नहीं लिख पाया था कि इसी बीच में मासिक-पत्र में मुझे प्रति मास नियमित रूप से लेख देना पड़ा। इधर मज़दूर संगठन के काम में तो दिन-रात व्यस्त रहता ही था, इसलिए इस पुस्तक को वांछित रूप से तो नहीं ही लिख पाया।</p>
+<p>आज जब पुनः इस पुस्तक का सम्पादन करने बैठा हूँ तो सहस्रों प्रकार की बातें मेरे मन में आ-आकर अपनी अभिव्यक्ति के लिए उमड़ी पड़ रही हैं। बात यह है कि काल के प्रवाह से भारत में आज नई-नई बातें पैदा हो रही है, नये आदर्शों के द्वन्द्व के कारण भारत के राष्ट्रक्षेत्र में आज तरह-तरह की उलझनें पैदा हो रही है। जिस समय मैंने सर्वप्रथम राजनीति में कार्य करना प्रारम्भ किया था उस समय भी कम उलझनें न थीं, लेकिन आज उन उलझनों को पार करके अब मुझे दूसरी उलझनों का सामना करना पड़ रहा है। इन दोनों युगों की उलझनों में जो अन्तर है उसे समझे बिना मेरी वर्तमान परिस्थिति को कोई समझ नहीं सकता, एवं आधुनिक युग के आदर्श-गत द्वन्द्वों का स्पष्टीकरण किए बिना आज मैं इस पुस्तक की भूमिका ठीक तरह से नहीं लिख सकता।</p>
+<p>यहाँ पर जीवन की कुछ गूढ़ बातें कहना आवश्यक हो गया है। यद्यपि मैं यहाँ अपनी आप बीती नहीं लिखना चाहता, तो भी मुझे अपनी मानसिक स्थिति का कुछ अंश यहाँ पर खोलना ही पड़ेगा।</p>
+<p>जब मैं बालक ही था, तभी से नाना कारणों से मैंने संकल्प कर लिया था कि भारतवर्ष को स्वाधीन किया जाना है और इसके लिए मुझे सामरिक जीवन व्यतीत करना है। सर्वप्रथम यह भावना मेरे मन में कैसे आई इसका भी एक छोटा-सा इतिहास है, अन्य स्थान पर इसकी चर्चा मुझे करनी पड़ेगी।
+जिस समय क्रान्तिकारी भावना को लेकर मैंने सर्वप्रथम बनारस में संगठन प्रारम्भ किया था, संयोगवश इसी समय करीब-करीब मेरी ही उम्र के एक नवीन युवक के साथ मेरी गहरी मित्रता हो गई थी। यह नवीन युवक अभी कलकत्ता से आये हुए थे। ऐसी मित्रता कैसे उत्पन्न होती है यह एक रहस्य की बात है। नवीन भावनाओं की तरह सहसा किसी एक दिन ऐसे मित्र जीवन-पथ में आकर खड़े हो जाते हैं। पहले ही दर्शन में यह प्रतीत हो जाता है कि यह मेरे बड़े प्रियजन हैं। मोल-भाव करके दुनिया की चीजें खरीदी जाती हैं, लेकिन जीवन की जो श्रेष्ठ सम्पदा है वह यों ही मिला करती है। इस प्रकार से जीवन के एक महान् अवसर पर मैंने इस तरह से यों ही अपने मित्र को पाया था—लेकिन थोड़े ही दिनों में जीवन के आदर्श को लेकर इनके साथ मेरा मतभेद उत्पन्न हुआ। मैं तो पहले ही संकल्प कर चुका था कि भारत को विदेशियों के हाथ से मुक्त करूँगा और इस महान् कार्य को सम्पन्न करने के लिए गोपनीय रूप से जनबल एवं अस्त्रबल संग्रह करना पड़ेगा। उस समय शिवाजी को मैं आदर्श पुरुष समझने लगा था। पिताजी जब पूछते थे कि तुम आगे चलकर क्या करोगे, तो मैं कहना था कि मैं शिवाजी बनूंगा, नेपोलियन की तरह मैं जीवन बिताना चाहता हूँ। लेकिन अब मेरे मित्र ने मेरे मन में एक भीषण उलझन पैदा कर दी। हम लोगों की अवस्था उस समय पन्द्रह-सोलह साल की थी। इसी उम्र में मेरे मित्र ने संन्यास का आदर्श पसन्द कर लिया था, जिसका अर्थ होता है समाज-सेवा के काम से अलग होकर व्यक्तिगत साधना में जीवन व्यतीत करना। मेरे लिए सामाजिक कर्म को छोड़ना एक प्रकार से असम्भव-सा था। लेकिन मेरे मित्र ने मुझे यह समझाना चाहा कि मनुष्य का श्रेष्ठ आदर्श है जीवन में ईश्वर की उपलब्धि करना। ईश्वर का साक्षात्कार हुए बिना हम जो कुछ भी करेंगे उससे समाज का यथार्थ कल्याण होगा या नहीं यह कहना कठिन है। सत्य की अनुभूति हुए बिना हम कैसे ठीक रास्ते को अख्तियार कर सकते हैं? ईश्वर का साक्षात्कार होने के पश्चात् ही हम यथार्थ रूप में समझ सकते हैं कि क्या सत्य है और क्या असत्य, क्या कल्याणकारी है और क्या अमंगलप्रद। ईश्वर का साक्षात्कार किए बिना समाज का कल्याण करने जाना मानो अन्धे होकर, अन्धे को रास्ता दिखलाना है। ईश्वर का साक्षात्कार करने के पश्चात् ईश्वर की आज्ञा से, ईश्वर की इच्छानुसार जब हम समाज की सेवा में लगेंगे तभी हमारी समाज-सेवा सार्थक हो सकती है। अपने पक्ष की पुष्टि के लिए मेरे मित्र ने स्वामी विवेकानन्द एवं परमहंस रामकृष्ण देव की जीवनी का उल्लेख किया।
+इस प्रकार जीवन में सर्वप्रथम आदर्शगत द्वन्द्व उपस्थित हुआ। एक तरफ मैं समाज को छोड़ नहीं सकता था; दूसरी तरफ अपने जीवन के परम मित्र से भी मैं दूर नहीं रह सकता था, लेकिन मेरे मित्र मेरे साथ चलने के लिए तैयार न थे। मैं भी अपने मित्र के रास्ते पर चलने को तैयार न था। छः महीने तक दिन और रात इस उलझन में फँसे रहे। उस किशोरावस्था की मित्रता में एक अजीब मोहिनी शक्ति थी। हम एक-दूसरे को छोड़ भी नहीं पाते थे, ग्रहण भी नहीं कर पाते थे। आज भी मेरे मित्र संन्यास मार्ग में अवस्थित हैं और मैं गहस्थ आश्रम में जकड़ा हुआ गोता खा रहा हूँ।
+अपने मित्र के बताने पर मैंने स्वामी विवेकानन्द एवं श्रीरामकृष्ण परमहंस देव की जीवनी पढ़ी, उनकी तमाम उक्तियों को लेकर एकाग्र मन से एकान्त में गम्भीर रूप से मनन किया। उपनिषद् एवं गीता अनुवाद की सहायता से बार-बार पढ़ीं, साधु-संगति भी करने लग गया। इस प्रकार से हिन्दू-समाज की मर्मकथा को भली प्रकार से समझने की मैंने अपने अन्तरतम से चेष्टा की। साधु-सन्तों की संगति से जीवन में प्रभूत लाभ हुआ इसमें कोई सन्देह नहीं; लेकिन जी को तसल्ली नहीं हुई। मेरी समझ में यह बात नहीं आई कि हमारे समाज के श्रेष्ठ महापुरुष क्यों समाज में नहीं आते, क्यों सामाजिक काम में अग्रणी नहीं होते? साधु-सन्तों के संसर्ग में आकर मैंने यह देखा कि साधन-भजन करना छोड़कर ये लोग एक क़दम भी इधर-उधर नहीं जाते। यहाँ तक कि साधन-भजन के बारे में भी इनके जो कुछ अनुभव है उन्हें भी ये पुस्तक के आकार में समाज को देना नहीं चाहते। इनमें त्याग है, अध्ययनशीलता है, दत्तचित्त होकर एक काम में लग जाने की शक्ति है, लेकिन ये समाज-सेवा के किसी काम में आना नहीं चाहते। मैंने अपने मन में यह सोचा कि यदि हमारे पूर्वज भी ऐसे ही होते तो आज हमें न पाणिनि जैसा व्याकरण ही मिलता, न वेद-वेदान्त, उपनिषद्, ज्योतिष, गणित या आयुर्वेद शास्त्र ही प्राप्त होते। मेरे मन में यह सन्देह पैदा हुआ कि सम्भव है आजकल के साधु-सन्त चाहे जितने भी भले हों, लेकिन इनमें प्राचीनकाल की तरह वह प्रतिभा नही है, वह सम्यक् दृष्टि भी नहीं है, जिसके कारण एक दिन भारतवर्ष सभ्यता के चरम शिखर पर आरूढ़ था। मुझे तसल्ली नही हुई। गीता के कर्मयोग के आदर्श ने नेतागण अरविन्द घोष के दार्शनिक विचारों से अंतरंग रूप से प्रभावित हो रहे थे । इससे बढ़कर सन्तोष अपने जीवन में मुझे बहुत कम मिला है। मेरे मानसिक द्वंद्वों के इस अंश को बिना समझे 'बन्दी जीवन' के बहुत-से स्थानों को पाठक ठीक से नहीं समझ पाएंगे। ऐसी मानसिक परिस्थिति में मैंने क्रान्तिकारी दल में काम किया एवं इसी मनोवृत्ति को साथ लेकर मैं जेल गया, कालेपानी गया और लौट भी आया।</p>
+<p>सन् 1920 के बाद जब मैं कालेपानी से लौटकर आया तब महात्मा गांधी भारत के राष्ट्रीय क्षेत्र में अपनी कार्यप्रणाली को लेकर अवतीर्ण हो चुके थे। महात्मा गांधी की अहिंसा नीति के कारण, एवं महात्मा गांधी ऐसे महान् व्यक्ति का भारत के राष्ट्रीय आन्दोलन में सक्रिय रूप से भाग लेने के कारण भारतीय क्रान्तिकारी आन्दोलन को काफी बाधा पहुँची। महात्मा गांधी यह प्रचार करने लगे कि भारतीय प्राचीन आदर्श के साथ भारतीय क्रान्तिकारी आन्दोलन का समन्वय नहीं हो सकता। मानो प्राचीन भारतीय आदर्श में श्रीकृष्ण का एवं कुरुक्षेत्र के महायुद्ध का कोई स्थान ही नहीं है। महात्मा गांधी की तरह संस्कृत पाठ-शालाओं के छात्र एवं अध्यापकगण भी भारतीय प्राचीन आदर्श के नाम पर भारतीय क्रान्तिकारी आन्दोलन के विरुद्ध तीव्र प्रचार किया करते थे। इस प्रकार से हिंसा एवं अहिंसा की नीति को लेकर मेरे मन में दूसरा संघर्ष उत्पन्न हुआ था, लेकिन यह इतना तीव्र न था। महात्माजी ने बेलगाँव कांग्रेस में क्रान्तिकारियों के विरुद्ध जो कुछ दोषारोपण किए थे उसके प्रत्युत्तर में मैंने फरार हालत में महात्मा जी के पास अपने नाम से एक चिट्ठी भेजी थी, वह चिट्ठी ज्यों की त्यों 12 फरवरी सन् 1925 की 'यंग इंडिया' में प्रकाशित हुई थी। उसी अंक में महात्माजी ने उसका उत्तर भी दिया था।</p>
+<p>कालेपानी से लौटने के बाद संभवतः सन् 1923 में ही मैं पहले पहल कम्युनिस्ट सिद्धान्तों से परिचित हुआ। यह एक नवीन सिद्धान्त था जिसके साथ क्रान्तिकारी दल के किसी व्यक्ति का भी उस समय यथार्थ परिचय न था। तत्पश्चात् सन् 1925 में जेल जाने के पहले मैं कम्युनिस्ट सिद्धान्त के साथ यथेष्ट रूप से परिचित हुआ। बहुत से प्रामाणिक ग्रन्थ पढ़े, कम्युनिस्टों के साथ खूब वाद-विवाद किया, विचार विनिमय किया। एक तरफ मैं क्रान्तिकारी आन्दोलन में जुटा था दूसरी तरफ 'बन्दी जीवन' के दूसरे भाग का सम्पादन-कार्य भी कर रहा था, एवं कम्युनिस्ट सिद्धान्त को समझने के लिए जी-जान से प्रयत्न कर रहा था। कम्यूनिस्ट सिद्धान्त का कुछ अंश तो मैंने ग्रहण कर लिया, लेकिन कुछ अंश को मैं आज भी ग्रहण नहीं कर पाया। कम्यूनिज़्म के सिद्धान्त की आर्थिक योजना की बहुत-सी बातें मैंने स्वीकार कीं, लेकिन आर्थिक योजना के साथ कम्यूनिज़्म के सिद्धान्त में भौतिक-वाद के बहुत-से ऐसे सिद्धान्त हठपूर्वक जोड़ दिये गए हैं, जिसे दार्शनिक दृष्टि से एवं मानव अभिज्ञता की दृष्टि से मैं सत्य नहीं समझता। मैं अब भी ईश्वर में विश्वास रखता हूँ एवं यह समझता हूँ कि आधुनिक विज्ञान की अभिव्यक्ति से क्रमशः भारतीय दर्शन-शास्त्र का पुष्टि होती जा रही है। आजकल हमारे देश के कुछ व्यक्ति परानुकरण वृत्ति के वश होकर आत्मवाद को स्वीकार नहीं कर रहे हैं एवं जो लोग आत्मवाद में  विश्वास रखते है उनकी वे हँसी उड़ाते हैं।</p>
+<p>यथार्थ में बात तो यह है कि अपनी-अपनी अभिरुचि, संस्कार एवं संगी-साथियों के प्रभाव की वजह से ही अधिकांशतः हमारी विचारधारा बनती है; गम्भीर रूप से चिन्तन करने के बाद किसी सिद्धान्त को ग्रहण करने का दृष्टान्त मनुष्य में दुर्लभ है।</p>
+<p>यह भी एक बात है कि आज जो लोग राष्ट्रीय क्षेत्र में त्याग एवं वीरता के साथ आगे बढ़ रहे हैं, उनकी विचारधारा का प्रभाव स्वभावतः प्रबल होगा। रूसी विप्लवी आन्दोलन की सफलता के मोह में आकर भी आज हमारे देश के बहुतेरे नौजवान उससे अभिभूत हो रहे हैं। भौतिकवादियों के मन में यह भी एक धारणा है कि आधुनिक विज्ञान ने आत्मवाद के सिद्धान्त को जड़ से उखाड़कर फेंक दिया है, लेकिन ये सब बातें बिलकुल निराधार है।</p>
+<p>निष्पक्षपात रूप से यदि हम आधुनिक विज्ञान की आलोचना करें तो हमें यह अवश्य ही स्वीकार करना पड़ेगा कि विज्ञान केवल इन्द्रियग्राह्य विषयों की ही खोज करता है, इम कारण विज्ञान की सहायता से हम यह कैसे कह सकते है कि इन्द्रियातीत वस्तुओं का अस्तित्व ही नहीं है? यन्त्रों के आविष्कार से हम अपनी इन्द्रियों की शक्ति को बढ़ाते हैं, ओर तब हम देख पाते हैं कि जों वस्तु इन्द्रिय-गोचर नही थी वह यन्त्रों की सहायता से इन्द्रियग्राह्य हो गई। आज वैज्ञानिक उन्नति के कारण हमें यह प्रतीत होने लगा है कि हमारे सुपरिचित ज्योति पुंज के अतिरिक्त, हमारी इन्द्रियग्राह्य आलोक-रश्मियों के अलावा भी, ऐसी बहुत-सी किरणें हैं, जिनकी प्रकाश-जनित परिचित आलोक-रश्मि से कहीं अधिक एवं आश्चर्यप्रद है। यन्त्रों की और भी उन्नति होने पर हमें पता चलेगा कि हमारे परिचित जगत् से, हमारे इन्द्रियग्राह्य जगत् से, इन्द्रियातीत जगत् कहीं अधिक व्यापक एवं चमत्कारपूर्ण है। हम मनुष्यों का स्थान उस अज्ञातलोक एवं ज्ञात लोक के सन्धि-स्थल पर स्थित है। यन्त्रों की सहायता के बिना भी मनुष्य ऐसी शक्ति अर्जन कर सकता है, जिसकी सहायता से, इन्द्रियातीत जगत् का उसे परिचय मिल सकता है।</p>
+<p>जीवविज्ञान एवं मनोविज्ञान की आधुनिक उन्नति से वैज्ञानिकों को यह प्रतीत होने लगा है कि भौतिक मतवाद एक अंधविश्वास मात्र है। इसका वैज्ञानिक आधार कुछ भी नहीं है। प्रसिद्ध जीव वैज्ञानिक जे० एस० हाल्डेन साहब ने तो यहाँ तक कह दिया है कि यदि व्यक्तिगत रूप से उन वैज्ञानिकों के प्रति लोगों की असीम श्रद्धा नहीं होती तो भौतिकवाद के मानने के कारण उन्हें वे घृणा की दृष्टि से देखते। {देखिये Materialism by J. S. Haldane C. H., M. D., F. R. S. Hom. LL. D. (Birmingham and Edinburgh) Hon. D. Sc. (Cambridge, Leeds, and Witwaterarsand) Fellow of New College, Oxford, and Honorary Professor Birmingham University— P. 39} नोबेल पुरस्कार प्राप्त किये हुए डॉक्टर कैरेल अमेरिका के प्रसिद्ध रॉकफेलर इंस्टीट्यूट में अनुसंधानकारी, जगत्प्रसिद्ध जीव-विज्ञानवेत्ता हैं। इनकी भी राय में भौतिकवाद एक व्यक्तिगत विश्वासमात्र है। विज्ञान की दृष्टि से इसकी पुष्टि नहीं हो सकती। बल्कि विज्ञान की आधुनिक गति भौतिक-वाद के विरोध में जा रही है। (देखिए कैरेल के लिखित Man the Unknown ) इस प्रकार से आधुनिक जगत् के विख्यात एवं लब्धप्रतिष्ठ वैज्ञानिकों के वचन उद्धृत करके यह दिखलाया जा सकता है कि भौतिकवाद एक मत मात्र है। भौतिकवाद का सिद्धान्त वैज्ञानिक आधार पर प्रतिष्ठित नहीं है। वट्रेण्ड रसेल साहब ने भी यह कहा है कि रूस के राजनीतिज्ञों एवं अमेरिका के कुछ थोड़े से वैज्ञानिकों को छोड़कर आधुनिक संसार में अधिकांश दार्शनिक एवं वैज्ञानिकों की भौतिकवाद में कोई श्रद्धा नहीं है। रूस एवं अमेरिका में ईसाई पुरोहितों के अवांछनीय किन्तु प्रबल प्रभाव के कारण उन देशों में उसकी प्रतिक्रिया के रूप में ऐसे भौतिकवाद का उद्भव हुआ है। { देखिए History of Materialism by Lang, English translation—Introduction by Bertrand Russell—Written in 1925. ) अपने इस पक्ष को प्रमाणादि देकर उचित प्रकार से सिद्ध करने के लिए एक सम्पूर्ण ग्रन्थ लिखने की आवश्यकता है। परन्तु इस स्थान पर इतने गहरे रूप से इस विषय में विचार करने के लिए मैं प्रवृत्त होना नहीं चाहता। अन्त में एक बात का और उल्लेख करके अपने वक्तव्य को स्पष्ट कर देना चाहता हूँ। एक तरफ आधुनिक पदार्थ-विज्ञान इस नतीजे पर आ पहुँचा है कि विश्व में जितने भी पदार्थ हैं, असल में वे सभी वैद्युतिक शक्ति के ही विभिन्न रूप हैं; दूसरी तरफ यह प्रमाणित हो रहा है कि मस्तिष्कशक्ति के परिचालन के परिणाम में वैद्युतिक प्रवाह उत्पन्न होता है। अभी इतना प्रमाणित होना बाकी रह गया कि वैद्युतिक प्रवाह के कारण मस्तिष्क में विचारधारा की उत्पत्ति हो। हमें याद रखना चाहिए कि कुछ दिन पहले यह अज्ञात था कि भौतिक शक्तियाँ एक अवस्था से दूसरी अवस्था में रूपान्तरित की जा सकती हैं परन्तु आज अवश्य यह बात प्रमाणित हो गई है। इस प्रकार से हम उस दिन की प्रतीक्षा में हैं जिस दिन यह प्रमाणित हो जायगा कि संसार के समस्त पदार्थ एवं जीवजगत् के समस्त जीवों की प्राणशक्ति तथा चैतन्य एवं बुद्धि ये सब के सब एक ही वस्तु के विभिन्न रूप या प्रकाश हैं। कलकत्ता हाईकोर्ट के प्रसिद्ध जज सर जान वुडराफ साहब ने यह कहने का साहस किया था कि आधुनिक विज्ञान की प्रगति वेदान्त के सिद्धान्त की तरफ अनिवार्य रूप से झुक रही है। न कि वेदान्त को अपने सिद्धान्त से हटकर विज्ञान की तरफ झुकना पड़ रहा है।</p>
+<p>इस पहलू के अलावा समाजवाद के और भी बहुत-से सिद्धान्त हैं जिनसे मैं सहमत नहीं हूँ, यथा मार्क्सवादियों का यह कहना है कि इतिहास की अभिव्यक्ति आर्थिक कारणों से ही हुआ करती है तथा संसार में अभिव्यक्ति हरेक प्रकार की सभ्यता के मूल में आर्थिक कारण ही प्रधान रूप में सक्रिय होते हैं। इस बात को भी मैं स्वीकार नहीं कर पाया।</p>
+<p>मार्क्स का यह भी कहना था कि पूंजीवादी व्यवस्था में उद्योग-धन्धों की उन्नति के साथ-साथ संसार के मजदूरों में अशान्ति भी बढ़ेगी एवं उनकी क्रोधाग्नि भी प्रज्वलित होगी और क्रमशः इन दो श्रेणियों के संघर्ष के परिणाम में पूंजी-पतियों की हार एवं मजदूरों की विजय अवश्यम्भावी है। लेकिन वास्तविक जगत् में हम देखते यह हैं कि संसार में जर्मनी, फ्रांस, इंग्लैड, इटली, अमेरिका, जापान इत्यादिदेशों में पूंजीपतियों की उन्नति चरम सीमा को प्राप्त किए है। फिर भी इन मजदूरों की क्रान्ति इन देशों में नहीं हुई है। प्रत्युत कम्यूनिस्ट चीन एवं इस जैसे पिछड़े हुए देशों में अपना राज्य कायम करने में बहुत कुछ कृतकार्य हुए हैं। इसके मूल में आर्थिक कारण उतने नहीं हैं जितने अन्य और अनेक प्रकार के कारण हैं।
+इन सब बातों की वैज्ञानिक प्रणाली से आलोचना करना आवश्यक है, लेकिन इस भूमिका में यह सम्भव नहीं है। इन सब बातों की सम्यक् आलोचना कही अन्यत्र करने की मेरी प्रबल इच्छा है।
+आधुनिक विज्ञान एवं ऐतिहासिक खोज की प्रणाली की सहायता से भारतीय विप्लव आन्दोलन का एक प्रामाणिक इतिहास अलग ही लिखने की प्रबल आकांक्षा है, इसलिए प्रस्तुत पुस्तक 'बन्दी जीवन' में कोई विशेष परिवर्तन नहीं किया गया। इस पुस्तक की हिन्दी भी मेरी नहीं है। इस बार जेल से छूटने के बाद से हिन्दी में लिखना प्रारम्भ किया है। इच्छा है कि अगले संस्करण में अनुवाद की सहायता न लेकर मैं हिन्दी में ही मूल ग्रन्थ को लिखूँ। इस ग्रन्थ की त्रुटियों के लिए पाठकवर्ग से क्षमा का भिखारी हूँ।</p>
+<p>लखनऊ,
+13 सितम्बर, 1938</p>
+<ul>
+<li>शचीन्द्रनाथ सान्याल</li>
+</ul>
+
+
+    </div>
+
+  </main>
+
+  <footer>
+  <a class="contact" href="/pages/footer/contact.html">Contact Us</a>
+  <a class="about" href="/pages/footer/about.html">About Us</a>
+  <a class="social" href="/pages/footer/socials.html">Our Socials</a>
+  <a class="join" href="/pages/footer/join.html">Join Us</a>
+</footer>
+
+
+</body>
+</html>

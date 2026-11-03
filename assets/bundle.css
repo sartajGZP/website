@@ -116,7 +116,6 @@ br {
    ========================= */
 .page-container {
   max-width: 80ch;
-  margin-inline: auto;
   padding-inline: 4vw;
   min-width: 0;
 }
@@ -126,11 +125,16 @@ main,
   flex: 1;
   min-width: 0;
   margin-block: 3vw 5vw;
-  margin-inline: auto;
   max-width: 93vw;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+/* main hugs left; nothing in the content area is auto-centered. */
+main {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .content.prose {
@@ -291,6 +295,7 @@ a:hover {
   flex-direction: column;
   gap: 0.75rem;
   padding-block: 1rem 0.75rem;
+  margin-inline: auto;
 }
 
 .header-brand {
