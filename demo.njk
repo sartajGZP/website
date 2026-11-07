@@ -36,6 +36,12 @@ eleventyNavigation:
             <li class="demo-event__links-item">
               <a class="demo-event__link" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.url | truncate(70) }}</a>
               {% if link.comment %}<span class="demo-event__comment"> - {{ link.comment }}</span>{% endif %}
+              {% if link.transcript %}
+                <details class="demo-transcript">
+                  <summary class="demo-transcript__summary">Transcript</summary>
+                  <p class="demo-transcript__body">{{ link.transcript }}</p>
+                </details>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

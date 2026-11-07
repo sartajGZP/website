@@ -70,3 +70,28 @@
 .demo-event__comment {
   color: var(--color-text-muted);
 }
+
+.demo-transcript {
+  margin-block: var(--space-1, 0.25rem) 0;
+}
+
+.demo-transcript__summary {
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.demo-transcript__summary:hover {
+  text-decoration: underline;
+}
+
+.demo-transcript__body {
+  margin-block: var(--space-2, 0.5rem) 0;
+  padding-left: var(--space-3, 0.75rem);
+  border-left: 2px solid var(--color-border-strong);
+  color: var(--color-text);
+  line-height: var(--line-height, 1.6);
+  overflow-wrap: anywhere;
+}
